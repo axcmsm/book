@@ -1,0 +1,1353 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>离线数仓 | 🦏</title>
+    <meta name="generator" content="VuePress 1.8.0">
+    <link rel="icon" href="/img/favicon.ico">
+    <meta name="description" content="web前端技术博客,简洁至上,专注web前端学习与总结。JavaScript,js,ES6,TypeScript,vue,python,css3,html5,Node,git,github等技术文章。">
+    <meta name="keywords" content="个人技术博客,后端,大数据,技术文档,学习,js,vue,python,css3,java,javaEE,SpringBoot,Spring,Hadoop,html5,git,github,markdown">
+    <meta name="theme-color" content="#11a8cd">
+    <link rel="preload" href="/assets/css/0.styles.546f0649.css" as="style"><link rel="preload" href="/assets/js/app.54c20740.js" as="script"><link rel="preload" href="/assets/js/2.125ae6e8.js" as="script"><link rel="preload" href="/assets/js/51.46e4d352.js" as="script"><link rel="prefetch" href="/assets/js/10.95c2d7b0.js"><link rel="prefetch" href="/assets/js/100.22bef1db.js"><link rel="prefetch" href="/assets/js/101.95bf0d45.js"><link rel="prefetch" href="/assets/js/102.f2573571.js"><link rel="prefetch" href="/assets/js/103.7f32d4d1.js"><link rel="prefetch" href="/assets/js/104.8952a14d.js"><link rel="prefetch" href="/assets/js/105.a7056d6f.js"><link rel="prefetch" href="/assets/js/106.fdc0e0c0.js"><link rel="prefetch" href="/assets/js/107.87869a32.js"><link rel="prefetch" href="/assets/js/108.b69443ee.js"><link rel="prefetch" href="/assets/js/109.1dc036f2.js"><link rel="prefetch" href="/assets/js/11.5682c637.js"><link rel="prefetch" href="/assets/js/110.45d48e62.js"><link rel="prefetch" href="/assets/js/111.5fe20274.js"><link rel="prefetch" href="/assets/js/112.f0216b9a.js"><link rel="prefetch" href="/assets/js/113.51044044.js"><link rel="prefetch" href="/assets/js/114.202226f6.js"><link rel="prefetch" href="/assets/js/115.daf536ca.js"><link rel="prefetch" href="/assets/js/116.73d14456.js"><link rel="prefetch" href="/assets/js/117.62614815.js"><link rel="prefetch" href="/assets/js/118.b3fe318a.js"><link rel="prefetch" href="/assets/js/119.ec9a1489.js"><link rel="prefetch" href="/assets/js/12.5a51d307.js"><link rel="prefetch" href="/assets/js/120.f189350d.js"><link rel="prefetch" href="/assets/js/121.0701b3e4.js"><link rel="prefetch" href="/assets/js/122.2b947072.js"><link rel="prefetch" href="/assets/js/13.7cfaa6fe.js"><link rel="prefetch" href="/assets/js/14.32085acd.js"><link rel="prefetch" href="/assets/js/15.9920adfb.js"><link rel="prefetch" href="/assets/js/16.7101d872.js"><link rel="prefetch" href="/assets/js/17.c731932d.js"><link rel="prefetch" href="/assets/js/18.fb18dcc3.js"><link rel="prefetch" href="/assets/js/19.94f67b91.js"><link rel="prefetch" href="/assets/js/20.b62f0e5d.js"><link rel="prefetch" href="/assets/js/21.fe016662.js"><link rel="prefetch" href="/assets/js/22.23fb3863.js"><link rel="prefetch" href="/assets/js/23.df829d61.js"><link rel="prefetch" href="/assets/js/24.dbfcb2d0.js"><link rel="prefetch" href="/assets/js/25.9c5401b3.js"><link rel="prefetch" href="/assets/js/26.a991ea92.js"><link rel="prefetch" href="/assets/js/27.703b981f.js"><link rel="prefetch" href="/assets/js/28.6b84abe6.js"><link rel="prefetch" href="/assets/js/29.371a35c5.js"><link rel="prefetch" href="/assets/js/3.fa9e7b6d.js"><link rel="prefetch" href="/assets/js/30.0e959ae4.js"><link rel="prefetch" href="/assets/js/31.2abbdb83.js"><link rel="prefetch" href="/assets/js/32.8cf6cae8.js"><link rel="prefetch" href="/assets/js/33.f53fe74a.js"><link rel="prefetch" href="/assets/js/34.dfc89fa6.js"><link rel="prefetch" href="/assets/js/35.e96066e5.js"><link rel="prefetch" href="/assets/js/36.e0d50b6b.js"><link rel="prefetch" href="/assets/js/37.20cc7658.js"><link rel="prefetch" href="/assets/js/38.300b0f3e.js"><link rel="prefetch" href="/assets/js/39.09b80835.js"><link rel="prefetch" href="/assets/js/4.4a137b18.js"><link rel="prefetch" href="/assets/js/40.2fc7d5f7.js"><link rel="prefetch" href="/assets/js/41.75353f59.js"><link rel="prefetch" href="/assets/js/42.f4d93aa6.js"><link rel="prefetch" href="/assets/js/43.9226d384.js"><link rel="prefetch" href="/assets/js/44.01bb314d.js"><link rel="prefetch" href="/assets/js/45.454ee3ae.js"><link rel="prefetch" href="/assets/js/46.d2dd08cd.js"><link rel="prefetch" href="/assets/js/47.9d5d7a91.js"><link rel="prefetch" href="/assets/js/48.7c8df7cc.js"><link rel="prefetch" href="/assets/js/49.5ecfacf6.js"><link rel="prefetch" href="/assets/js/5.51ca929a.js"><link rel="prefetch" href="/assets/js/50.be294fe7.js"><link rel="prefetch" href="/assets/js/52.5e575a6f.js"><link rel="prefetch" href="/assets/js/53.8bf3ba5f.js"><link rel="prefetch" href="/assets/js/54.481fc903.js"><link rel="prefetch" href="/assets/js/55.41ad3f5d.js"><link rel="prefetch" href="/assets/js/56.97ff3ffd.js"><link rel="prefetch" href="/assets/js/57.56845d08.js"><link rel="prefetch" href="/assets/js/58.1865eac5.js"><link rel="prefetch" href="/assets/js/59.b9b7a46e.js"><link rel="prefetch" href="/assets/js/6.1eaa1376.js"><link rel="prefetch" href="/assets/js/60.e596d87e.js"><link rel="prefetch" href="/assets/js/61.ccc81623.js"><link rel="prefetch" href="/assets/js/62.c263b15a.js"><link rel="prefetch" href="/assets/js/63.06832aeb.js"><link rel="prefetch" href="/assets/js/64.8d09c614.js"><link rel="prefetch" href="/assets/js/65.8fdc58dd.js"><link rel="prefetch" href="/assets/js/66.2f7b1a19.js"><link rel="prefetch" href="/assets/js/67.b2e1da2f.js"><link rel="prefetch" href="/assets/js/68.8cb80f6a.js"><link rel="prefetch" href="/assets/js/69.87f24303.js"><link rel="prefetch" href="/assets/js/7.1096b6fa.js"><link rel="prefetch" href="/assets/js/70.7d332a1a.js"><link rel="prefetch" href="/assets/js/71.18f26409.js"><link rel="prefetch" href="/assets/js/72.2c6923d8.js"><link rel="prefetch" href="/assets/js/73.7a4495cb.js"><link rel="prefetch" href="/assets/js/74.3ad58791.js"><link rel="prefetch" href="/assets/js/75.d985e2a8.js"><link rel="prefetch" href="/assets/js/76.ed21e9d5.js"><link rel="prefetch" href="/assets/js/77.7bb71304.js"><link rel="prefetch" href="/assets/js/78.53781f01.js"><link rel="prefetch" href="/assets/js/79.1b5a4f17.js"><link rel="prefetch" href="/assets/js/8.c7bc2101.js"><link rel="prefetch" href="/assets/js/80.5a3a5c75.js"><link rel="prefetch" href="/assets/js/81.c8e9b4ba.js"><link rel="prefetch" href="/assets/js/82.da3ddabe.js"><link rel="prefetch" href="/assets/js/83.4446b251.js"><link rel="prefetch" href="/assets/js/84.812b630b.js"><link rel="prefetch" href="/assets/js/85.3f6cf67c.js"><link rel="prefetch" href="/assets/js/86.df8c0734.js"><link rel="prefetch" href="/assets/js/87.db2d840c.js"><link rel="prefetch" href="/assets/js/88.ed0658da.js"><link rel="prefetch" href="/assets/js/89.58d49aa6.js"><link rel="prefetch" href="/assets/js/9.6f6f6044.js"><link rel="prefetch" href="/assets/js/90.fd3f1e22.js"><link rel="prefetch" href="/assets/js/91.86ad199e.js"><link rel="prefetch" href="/assets/js/92.becc4500.js"><link rel="prefetch" href="/assets/js/93.5dc0a770.js"><link rel="prefetch" href="/assets/js/94.33a101f7.js"><link rel="prefetch" href="/assets/js/95.7cc4c897.js"><link rel="prefetch" href="/assets/js/96.05da9357.js"><link rel="prefetch" href="/assets/js/97.4dc907b9.js"><link rel="prefetch" href="/assets/js/98.bcd4b95f.js"><link rel="prefetch" href="/assets/js/99.0c290d2f.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.546f0649.css">
+  </head>
+  <body class="theme-mode-light">
+    <div id="app" data-server-rendered="true"><div class="theme-container sidebar-open have-rightmenu have-body-img"><header class="navbar blur"><div title="目录" class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><img src="/img/favicon.ico" alt="🦏" class="logo"> <span class="site-name can-hide">🦏</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/" class="nav-link">首页</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Big数据" class="dropdown-title"><a href="/BigData/" class="link-title">Big数据</a> <span class="title" style="display:none;">Big数据</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>大数据路线</h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/pages/2asd1/" class="nav-link">开发路线</a></li><li class="dropdown-subitem"><a href="/pages/5cda13/" class="nav-link">linux导图</a></li></ul></li><li class="dropdown-item"><h4>学习笔记</h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/pages/l2sdd2ad123/" class="nav-link">《Linux》</a></li><li class="dropdown-subitem"><a href="/pages/hdf2shad2o4p3/" class="nav-link">《Hadoop》</a></li><li class="dropdown-subitem"><a href="/pages/f2l2im24e/" class="nav-link">《生态圈组件》</a></li><li class="dropdown-subitem"><a href="/pages/ka1f3k4a/" class="nav-link">《消息队列》</a></li><li class="dropdown-subitem"><a href="/pages/spa123ra12sd2/" class="nav-link">《spark》</a></li><li class="dropdown-subitem"><a href="/pages/f1l2i3n4k5/" class="nav-link">《flink》</a></li></ul></li></ul></div></div><div class="nav-item"><a href="/TechnologyStack/" class="nav-link">技术栈🎈</a></div><div class="nav-item"><a href="/python/" class="nav-link">python</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="⛳🖥" class="dropdown-title"><a href="/technology/" class="link-title">⛳🖥</a> <span class="title" style="display:none;">⛳🖥</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/pages/b08e81/" class="nav-link">计算机必备</a></li><li class="dropdown-item"><!----> <a href="/pages/fba33e/" class="nav-link">数学基础</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="more" class="dropdown-title"><a href="/more/" class="link-title">more</a> <span class="title" style="display:none;">more</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/pages/f2a556/" class="nav-link">学习</a></li><li class="dropdown-item"><!----> <a href="/pages/vscode123/" class="nav-link">技巧</a></li><li class="dropdown-item"><!----> <a href="/pages/4c76s2s6d8b3/" class="nav-link">技术文档</a></li><li class="dropdown-item"><!----> <a href="/pages/4c778760be26d8b3/" class="nav-link">GitHub技巧</a></li><li class="dropdown-item"><!----> <a href="/friends/" class="nav-link">友情链接</a></li></ul></div></div><div class="nav-item"><a href="/about/" class="nav-link">关于</a></div><div class="nav-item"><a href="/pages/beb6c0bd8a66cea6/" class="nav-link">收藏</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="索引" class="dropdown-title"><a href="/archives/" class="link-title">索引</a> <span class="title" style="display:none;">索引</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/categories/" class="nav-link">分类</a></li><li class="dropdown-item"><!----> <a href="/tags/" class="nav-link">标签</a></li><li class="dropdown-item"><!----> <a href="/archives/" class="nav-link">归档</a></li></ul></div></div><div class="nav-item"><a href="https://github.com/axcmsm" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Github
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar" style="display:none;"><div class="blogger"><img src="/img/zzx.jpg"> <div class="blogger-info"><h3>Axcmsm🐼</h3> <span>纵有疾风起，人生不言弃🐅</span></div></div> <nav class="nav-links"><div class="nav-item"><a href="/" class="nav-link">首页</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Big数据" class="dropdown-title"><a href="/BigData/" class="link-title">Big数据</a> <span class="title" style="display:none;">Big数据</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>大数据路线</h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/pages/2asd1/" class="nav-link">开发路线</a></li><li class="dropdown-subitem"><a href="/pages/5cda13/" class="nav-link">linux导图</a></li></ul></li><li class="dropdown-item"><h4>学习笔记</h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/pages/l2sdd2ad123/" class="nav-link">《Linux》</a></li><li class="dropdown-subitem"><a href="/pages/hdf2shad2o4p3/" class="nav-link">《Hadoop》</a></li><li class="dropdown-subitem"><a href="/pages/f2l2im24e/" class="nav-link">《生态圈组件》</a></li><li class="dropdown-subitem"><a href="/pages/ka1f3k4a/" class="nav-link">《消息队列》</a></li><li class="dropdown-subitem"><a href="/pages/spa123ra12sd2/" class="nav-link">《spark》</a></li><li class="dropdown-subitem"><a href="/pages/f1l2i3n4k5/" class="nav-link">《flink》</a></li></ul></li></ul></div></div><div class="nav-item"><a href="/TechnologyStack/" class="nav-link">技术栈🎈</a></div><div class="nav-item"><a href="/python/" class="nav-link">python</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="⛳🖥" class="dropdown-title"><a href="/technology/" class="link-title">⛳🖥</a> <span class="title" style="display:none;">⛳🖥</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/pages/b08e81/" class="nav-link">计算机必备</a></li><li class="dropdown-item"><!----> <a href="/pages/fba33e/" class="nav-link">数学基础</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="more" class="dropdown-title"><a href="/more/" class="link-title">more</a> <span class="title" style="display:none;">more</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/pages/f2a556/" class="nav-link">学习</a></li><li class="dropdown-item"><!----> <a href="/pages/vscode123/" class="nav-link">技巧</a></li><li class="dropdown-item"><!----> <a href="/pages/4c76s2s6d8b3/" class="nav-link">技术文档</a></li><li class="dropdown-item"><!----> <a href="/pages/4c778760be26d8b3/" class="nav-link">GitHub技巧</a></li><li class="dropdown-item"><!----> <a href="/friends/" class="nav-link">友情链接</a></li></ul></div></div><div class="nav-item"><a href="/about/" class="nav-link">关于</a></div><div class="nav-item"><a href="/pages/beb6c0bd8a66cea6/" class="nav-link">收藏</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="索引" class="dropdown-title"><a href="/archives/" class="link-title">索引</a> <span class="title" style="display:none;">索引</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/categories/" class="nav-link">分类</a></li><li class="dropdown-item"><!----> <a href="/tags/" class="nav-link">标签</a></li><li class="dropdown-item"><!----> <a href="/archives/" class="nav-link">归档</a></li></ul></div></div><div class="nav-item"><a href="https://github.com/axcmsm" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Github
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div> <!----></nav>  <ul class="sidebar-links"><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>路线or导图</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>学习笔记</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading open"><span>项目</span> <span class="arrow down"></span></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/pages/s4j9c1k3lce1x/" aria-current="page" class="active sidebar-link">离线数仓</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/pages/s4j9c1k3lce1x/#数据仓库" class="sidebar-link">数据仓库</a></li><li class="sidebar-sub-header"><a href="/pages/s4j9c1k3lce1x/#日志数据采集搭建" class="sidebar-link">日志数据采集搭建</a></li><li class="sidebar-sub-header"><a href="/pages/s4j9c1k3lce1x/#业务数据采集搭建" class="sidebar-link">业务数据采集搭建</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/pages/s4j9c1k3lce1x/#电商系统表结构" class="sidebar-link">电商系统表结构</a></li><li class="sidebar-sub-header"><a href="/pages/s4j9c1k3lce1x/#同步策略" class="sidebar-link">同步策略</a></li></ul></li><li class="sidebar-sub-header"><a href="/pages/s4j9c1k3lce1x/#数仓分层" class="sidebar-link">数仓分层</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/pages/s4j9c1k3lce1x/#仓库建模" class="sidebar-link">仓库建模</a></li><li class="sidebar-sub-header"><a href="/pages/s4j9c1k3lce1x/#调度流程" class="sidebar-link">调度流程</a></li></ul></li><li class="sidebar-sub-header"><a href="/pages/s4j9c1k3lce1x/#数据报表" class="sidebar-link">数据报表</a></li><li class="sidebar-sub-header"><a href="/pages/s4j9c1k3lce1x/#即席查询" class="sidebar-link">即席查询</a></li><li class="sidebar-sub-header"><a href="/pages/s4j9c1k3lce1x/#集群监控" class="sidebar-link">集群监控</a></li><li class="sidebar-sub-header"><a href="/pages/s4j9c1k3lce1x/#数据安全" class="sidebar-link">数据安全</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/pages/s4j9c1k3lce1x/#安全模式的搭建" class="sidebar-link">安全模式的搭建</a></li><li class="sidebar-sub-header"><a href="/pages/s4j9c1k3lce1x/#全流程调度测试" class="sidebar-link">全流程调度测试</a></li><li class="sidebar-sub-header"><a href="/pages/s4j9c1k3lce1x/#presto配置" class="sidebar-link">Presto配置</a></li><li class="sidebar-sub-header"><a href="/pages/s4j9c1k3lce1x/#kylin配置" class="sidebar-link">Kylin配置</a></li><li class="sidebar-sub-header"><a href="/pages/s4j9c1k3lce1x/#权限管理" class="sidebar-link">权限管理</a></li></ul></li><li class="sidebar-sub-header"><a href="/pages/s4j9c1k3lce1x/#元数据管理" class="sidebar-link">元数据管理</a></li><li class="sidebar-sub-header"><a href="/pages/s4j9c1k3lce1x/#数据质量检测" class="sidebar-link">数据质量检测</a></li><li class="sidebar-sub-header"><a href="/pages/s4j9c1k3lce1x/#🎇导图" class="sidebar-link">🎇导图</a></li></ul></li><li><a href="/pages/2ws2sd2a21ss/" class="sidebar-link">微实时分析可视化demo</a></li></ul></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>安装</span> <span class="arrow right"></span></p> <!----></section></li></ul> <div class="sidebar-slot sidebar-slot-bottom"><!-- 正方形 -->
+      <ins class="adsbygoogle"
+          style="display:block"
+          data-ad-client="ca-pub-7828333725993554"
+          data-ad-slot="3508773082"
+          data-ad-format="auto"
+          data-full-width-responsive="true"></ins>
+      <script>
+          (adsbygoogle = window.adsbygoogle || []).push({});
+      </script></div></aside> <div><main class="page"><div class="theme-vdoing-wrapper "><div class="articleInfo-wrap" data-v-1cd794fe><div class="articleInfo" data-v-1cd794fe><ul class="breadcrumbs" data-v-1cd794fe><li data-v-1cd794fe><a href="/" title="首页" class="iconfont icon-home router-link-active" data-v-1cd794fe></a></li> <li data-v-1cd794fe><a href="/BigData" title="大数据-目录页" data-v-1cd794fe>大数据</a></li> <li data-v-1cd794fe><a href="/BigData/#项目" title="大数据#项目" data-v-1cd794fe>项目</a></li> <!----></ul> <div class="info" data-v-1cd794fe><div title="作者" class="author iconfont icon-touxiang" data-v-1cd794fe><a href="https://github.com/axcmsm" target="_blank" title="作者" class="beLink" data-v-1cd794fe>axcmsm</a></div> <div title="创建时间" class="date iconfont icon-riqi" data-v-1cd794fe><a href="javascript:;" data-v-1cd794fe>2021-10-22</a></div> <!----></div></div></div> <!----> <div class="content-wrapper"><div class="right-menu-wrapper"><div class="right-menu-margin"><div class="right-menu-content"></div></div></div> <h1><img src="/img/bj3.jpg">
+          离线数仓
+        </h1> <div class="page-slot page-slot-top"><!-- 固定100% * 90px可显示，max-height:90px未见显示-->
+     <ins class="adsbygoogle"
+          style="display:inline-block;width:100%;max-height:90px"
+          data-ad-client="ca-pub-7828333725993554"
+          data-ad-slot="6625304284"></ins>
+      <script>
+          (adsbygoogle = window.adsbygoogle || []).push({});
+      </script></div> <div class="theme-vdoing-content content__default"><h2 id="数据仓库"><a href="#数据仓库" class="header-anchor">#</a> 数据仓库</h2> <p><img src="https://gitee.com/axcmsm/tmp/raw/master/bigdata/20211021082405.png" alt=""></p> <p><strong>为企业决策提供数据支撑</strong></p> <p>存储、分析、计算</p> <p><strong>查看日志的方法</strong>：打开控制台管理，network输入log</p> <ul><li>然后搜索url解析，复制的log数据进行解码</li></ul> <p><strong>数据的来源</strong>：</p> <ul><li><strong>业务数据</strong>：mysql等</li> <li><strong>用户行为数据</strong>：埋点：日志服务器(文件)</li> <li>爬虫数据</li></ul> <p><strong>数据仓库</strong>：Hive on spark</p> <blockquote><p>ODS备份=&gt;DWD清洗=&gt;DWS(按天聚合)=&gt;DWT(按年聚合）=&gt;ADS(报表)</p> <p>调度：Azkaban、Oozie、</p></blockquote> <p><strong>数据传输</strong>：flume(日志)（大的话可用kafka消峰）、sqoop(数据库)</p> <p><strong>数据输出</strong>：报表系统、用户<strong>画像</strong>（统计，规则，机器学习）、推荐系统、机器学习</p> <p><strong>需求</strong></p> <ul><li><strong>用户行为</strong>数据采集搭建</li> <li><strong>业务</strong>数据采集搭建</li> <li><strong>数据仓库维度建模</strong></li> <li>分析、<strong>设备、会员、商品、地区</strong>、活动等核心主题报表，近100个</li> <li>采用<strong>即席查询</strong>工具对指标进行分析</li> <li>对<strong>集群性能进行监控</strong>，报警。</li> <li><strong>元数据管理</strong>。</li> <li><strong>质量监控</strong></li> <li><strong>权限管理</strong></li></ul> <p><strong>架构设计</strong>：</p> <p><img src="https://gitee.com/axcmsm/tmp/raw/master/bigdata/20211021082610.png" alt=""></p> <p><strong>技术选型</strong></p> <blockquote><p>因素：数据量大小、业务需求、行业内经验、技术成熟度、开发维护成本、总成本预算</p></blockquote> <p>采集传输：<strong>flume</strong>、<strong>kafka</strong>、<strong>sqoop</strong>、Logstash、DataX</p> <p>数据存储：<strong>mysql</strong>、<strong>hdfs</strong>、<strong>hbase</strong>、redis、MongoDM</p> <p>数据计算：<strong>Hive</strong>、<strong>Tez</strong>、<strong>Spark</strong>、Flink、Storm</p> <p>数据查询：<strong>Presto</strong>、<strong>Kylin</strong>、Impala、Druid、ClickHouse、Doris</p> <p>数据可视化：<strong>Echarts、SuperSet</strong>、QuickBi、Datav</p> <p>调度工具：<strong>Azkaban</strong>、Oozie、DolphinScheduler、Airflow</p> <p>集群监控：<strong>Zabbix</strong>(离线)、prometheus（实时）</p> <p>权限管理：<strong>Ranger</strong>、Sentry</p> <p>元数据管理：<strong>Atlas</strong></p> <ul><li>技术</li> <li>框架：apache、cdh、hdp</li> <li>服务器：物理、云主机</li> <li>集群规模</li></ul> <p><img src="D:%5Chuanjin%5C%E7%AC%94%E8%AE%B0%E5%8C%BA%5C%E5%A4%A7%E6%95%B0%E6%8D%AE%E9%9A%8F%E7%AC%94%5C%E5%B0%8F%E9%A1%B9%E7%9B%AE%5Cimg%5Cimage-20211021084229099.png" alt="image-20211021084229099"></p> <p><strong>集群分俩套</strong>：生产or部署</p> <p>生产集群：10台(看需求)</p> <ul><li>消耗资源分开</li> <li>数据传输紧密防止一起</li> <li>客户端尽量放在一到俩台服务器上，方便外部访问</li> <li>有依赖关系的尽量放到同一台服务器。</li></ul> <p>测试集群：（3台）</p> <ul><li>内存：644  or 833</li></ul> <table><thead><tr><th>服务名称</th> <th>子服务</th> <th>服务器node1</th> <th>服务器node2</th> <th>服务器node3</th></tr></thead> <tbody><tr><td>HDFS</td> <td>NameNode</td> <td>√</td> <td></td> <td></td></tr> <tr><td></td> <td>DataNode</td> <td>√</td> <td>√</td> <td>√</td></tr> <tr><td></td> <td>SecondaryNameNode</td> <td></td> <td></td> <td>√</td></tr> <tr><td>Yarn</td> <td>NodeManager</td> <td>√</td> <td>√</td> <td>√</td></tr> <tr><td></td> <td>Resourcemanager</td> <td></td> <td>√</td> <td></td></tr> <tr><td>Zookeeper</td> <td>Zookeeper Server</td> <td>√</td> <td>√</td> <td>√</td></tr> <tr><td>Flume（采集日志）</td> <td>Flume</td> <td>√</td> <td>√</td> <td></td></tr> <tr><td>Kafka</td> <td>Kafka</td> <td>√</td> <td>√</td> <td>√</td></tr> <tr><td>Flume（消费Kafka）</td> <td>Flume</td> <td></td> <td></td> <td>√</td></tr> <tr><td>Hive</td> <td>Hive</td> <td>√</td> <td></td> <td></td></tr> <tr><td>MySQL</td> <td>MySQL</td> <td>√</td> <td></td> <td></td></tr> <tr><td>Sqoop</td> <td>Sqoop</td> <td>√</td> <td></td> <td></td></tr> <tr><td>Presto</td> <td>Coordinator</td> <td>√</td> <td></td> <td></td></tr> <tr><td></td> <td>Worker</td> <td></td> <td>√</td> <td>√</td></tr> <tr><td>Azkaban</td> <td>AzkabanWebServer</td> <td>√</td> <td></td> <td></td></tr> <tr><td></td> <td>AzkabanExecutorServer</td> <td>√</td> <td></td> <td></td></tr> <tr><td>Spark</td> <td></td> <td>√</td> <td></td> <td></td></tr> <tr><td>Kylin</td> <td></td> <td>√</td> <td></td> <td></td></tr> <tr><td>HBase</td> <td>HMaster</td> <td>√</td> <td></td> <td></td></tr> <tr><td></td> <td>HRegionServer</td> <td>√</td> <td>√</td> <td>√</td></tr> <tr><td>Superset</td> <td></td> <td>√</td> <td></td> <td></td></tr> <tr><td>Atlas</td> <td></td> <td>√</td> <td></td> <td></td></tr> <tr><td>Solr</td> <td>Jar</td> <td>√</td> <td></td> <td></td></tr> <tr><td>服务数总计</td> <td></td> <td>19</td> <td>8</td> <td>8</td></tr></tbody></table> <p><strong>目标数据</strong>：页面、事件、曝光、启动、错误</p> <p><strong>埋点</strong>：</p> <ul><li>代码埋点：每一个按钮用js写的 当onclick 记录相关信息发送到日志服务器</li> <li>可视化埋点：开发一个web页面进行相关配置(里面已经封装好ljs代码)</li> <li>全埋点：框架实现</li></ul> <blockquote><p>日志结构：埋点日志、启动日志</p> <p>每条数据可以是各个信息模块，公共信息模块</p></blockquote> <p><strong>部署</strong></p> <h2 id="日志数据采集搭建"><a href="#日志数据采集搭建" class="header-anchor">#</a> 日志数据采集搭建</h2> <blockquote><p><strong>flme =&gt; kafka(zk)=&gt;flume=&gt;hdfs</strong></p></blockquote> <p><strong>Flme</strong>： 生产者</p> <ul><li><p>数据 source、channel、sink 之间的选择。</p> <blockquote><p>TailDir Source：断点续传、多目录</p> <p>Kafka Channel，省去了Sink，提高了效率。KafkaChannel数据存储在Kafka里面(磁盘)</p></blockquote></li> <li><p>编写 配置文件</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>#1. 定义组件
+a1.sources = r1
+a1.channels = c1
+#2. 配置source
+#配置拦截器(ETL数据清洗 判断json)
+#3. 配置channel
+#4. sink #kafkachannels 无sink
+#5. 拼接
+a1.sources.r1.channels = c1
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br></div></div></li></ul> <p><strong>Flime</strong>:消费</p> <p><strong>零点漂移</strong></p> <blockquote><p>flume =&gt; kafka =&gt; flume =&gt; HDFS</p> <p>时间卡点 io延迟。</p> <p><strong>用时间戳拦截器</strong> 处理</p></blockquote> <div class="language- line-numbers-mode"><pre class="language-text"><code>#1. 定义组件
+a1.sources = r1
+a1.channels = c1
+#2. 配置source kafka 
+#3. 时间戳拦截器 解决零点漂移问题
+#4. 配置channel
+#5. sink #kafkachannels 无sink
+#6. 拼接
+a1.sources.r1.channels = c1
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br></div></div><h2 id="业务数据采集搭建"><a href="#业务数据采集搭建" class="header-anchor">#</a> 业务数据采集搭建</h2> <p><strong>SKU&amp;SPU</strong></p> <ul><li>sku 库存量基本单位， 每个产品都有对应唯一的sku号</li> <li>spu 商品聚合的最小单位，一组可复用、易检索的标准化信息。</li></ul> <blockquote><p><strong>平台属性or销售属性</strong></p></blockquote> <h3 id="电商系统表结构"><a href="#电商系统表结构" class="header-anchor">#</a> 电商系统表结构</h3> <ul><li>查看宏观表（那些表）</li> <li>熟悉表结构（行列）</li> <li>数据如何发送变化</li></ul> <p><strong>搭建</strong></p> <ul><li>批量同步</li> <li>实时同步</li></ul> <blockquote><p>sqoop 导入导出</p> <p>底层是mapreduce   有map 没有reduce聚合 所以没有计算</p> <p>bin/sqoop help  查看命令</p> <p>import导入 export导出  传入给定参数即可</p></blockquote> <h3 id="同步策略"><a href="#同步策略" class="header-anchor">#</a> 同步策略</h3> <ul><li><p>全量表：完整的  （适 <strong>数据量小，可会发生变化</strong>）</p> <blockquote><p>每日全量表： 按日期分区</p> <p>每日存储一次作为一个分区</p></blockquote></li> <li><p>增量表：新增加的 （适 <strong>数据量大、只新增不变化</strong>）</p> <blockquote><p>按日期分区，保存业务系统新增数据</p></blockquote></li> <li><p>新增变化表：增加和变化的 （ <strong>量大+变化</strong>）</p> <blockquote><p>业务数据库新增加的数据和未发生变化的进行整合</p></blockquote></li> <li><p>特殊表：只存一次  （<strong>不变化</strong>）</p> <blockquote><p>不发生变化的表，地区，省份，民族等。</p></blockquote></li></ul> <p>第一次同步时要采用全量+对应的方式</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>#全量 只执行一次
+bin/sqoop import \
+--connect jdbc:mysql://node1:3306/gmall \
+--username root \
+--password hadoop \
+--query 'select * from order_info where $CONDITIONS ' \
+--table /order_info/2020-06-14 \
+--delete-target-dir \
+--num-mappers 2 \
+--split-by id
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br></div></div><div class="language- line-numbers-mode"><pre class="language-text"><code>新增和变化
+//data -d '-1 day' #获取前一天数据
+do_data ='data -d '-1 day' +%F'
+bin/sqoop import \
+--connect jdbc:mysql://node1:3306/gmall \
+--username root \
+--password hadoop \
+--query 'select * from order_info where (data_format(create_time,'%Y-%m-%d')='$do_data' or data_format(operate_time,'%Y-%m-%d')='$do_data') and $CONDITIONS' \
+--table /order_info/$do_data \
+--delete-target-dir \
+--num-mappers 2 \
+--split-by id
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br></div></div><p>可以把这俩个封装成一个脚本</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>#! /bin/bash
+
+APP=gmall
+sqoop=/opt/module/sqoop/bin/sqoop
+
+if [ -n &quot;$2&quot; ] ;then
+   do_date=$2
+else 
+   echo &quot;请传入日期参数&quot;
+   exit
+fi 
+
+import_data(){
+$sqoop import \
+--connect jdbc:mysql://node1:3306/$APP \
+--username root \
+--password hadoop \
+--target-dir /origin_data/$APP/db/$1/$do_date \
+--delete-target-dir \
+--query &quot;$2 where \$CONDITIONS&quot; \
+--num-mappers 1 \
+--fields-terminated-by '\t' \
+--compress \
+--compression-codec lzop \
+--null-string '\\N' \
+--null-non-string '\\N'
+
+hadoop jar /opt/module/hadoop-3.1.3/share/hadoop/common/hadoop-lzo-0.4.20.jar com.hadoop.compression.lzo.DistributedLzoIndexer /origin_data/$APP/db/$1/$do_date
+}
+
+import_order_info(){
+  import_data order_info &quot;select
+                            id, 
+                            total_amount, 
+                            order_status, 
+                            user_id, 
+                            payment_way,
+                            delivery_address,
+                            out_trade_no, 
+                            create_time, 
+                            operate_time,
+                            expire_time,
+                            tracking_no,
+                            province_id,
+                            activity_reduce_amount,
+                            coupon_reduce_amount,                            
+                            original_total_amount,
+                            feight_fee,
+                            feight_fee_reduce      
+                        from order_info&quot;
+}
+
+import_coupon_use(){
+  import_data coupon_use &quot;select
+                          id,
+                          coupon_id,
+                          user_id,
+                          order_id,
+                          coupon_status,
+                          get_time,
+                          using_time,
+                          used_time,
+                          expire_time
+                        from coupon_use&quot;
+}
+
+import_order_status_log(){
+  import_data order_status_log &quot;select
+                                  id,
+                                  order_id,
+                                  order_status,
+                                  operate_time
+                                from order_status_log&quot;
+}
+
+import_user_info(){
+  import_data &quot;user_info&quot; &quot;select 
+                            id,
+                            login_name,
+                            nick_name,
+                            name,
+                            phone_num,
+                            email,
+                            user_level, 
+                            birthday,
+                            gender,
+                            create_time,
+                            operate_time
+                          from user_info&quot;
+}
+
+import_order_detail(){
+  import_data order_detail &quot;select 
+                              id,
+                              order_id, 
+                              sku_id,
+                              sku_name,
+                              order_price,
+                              sku_num, 
+                              create_time,
+                              source_type,
+                              source_id,
+                              split_total_amount,
+                              split_activity_amount,
+                              split_coupon_amount
+                            from order_detail&quot;
+}
+
+import_payment_info(){
+  import_data &quot;payment_info&quot;  &quot;select 
+                                id,  
+                                out_trade_no, 
+                                order_id, 
+                                user_id, 
+                                payment_type, 
+                                trade_no, 
+                                total_amount,  
+                                subject, 
+                                payment_status,
+                                create_time,
+                                callback_time 
+                              from payment_info&quot;
+}
+
+import_comment_info(){
+  import_data comment_info &quot;select
+                              id,
+                              user_id,
+                              sku_id,
+                              spu_id,
+                              order_id,
+                              appraise,
+                              create_time
+                            from comment_info&quot;
+}
+
+import_order_refund_info(){
+  import_data order_refund_info &quot;select
+                                id,
+                                user_id,
+                                order_id,
+                                sku_id,
+                                refund_type,
+                                refund_num,
+                                refund_amount,
+                                refund_reason_type,
+                                refund_status,
+                                create_time
+                              from order_refund_info&quot;
+}
+
+import_sku_info(){
+  import_data sku_info &quot;select 
+                          id,
+                          spu_id,
+                          price,
+                          sku_name,
+                          sku_desc,
+                          weight,
+                          tm_id,
+                          category3_id,
+                          is_sale,
+                          create_time
+                        from sku_info&quot;
+}
+
+import_base_category1(){
+  import_data &quot;base_category1&quot; &quot;select 
+                                  id,
+                                  name 
+                                from base_category1&quot;
+}
+
+import_base_category2(){
+  import_data &quot;base_category2&quot; &quot;select
+                                  id,
+                                  name,
+                                  category1_id 
+                                from base_category2&quot;
+}
+
+import_base_category3(){
+  import_data &quot;base_category3&quot; &quot;select
+                                  id,
+                                  name,
+                                  category2_id
+                                from base_category3&quot;
+}
+
+import_base_province(){
+  import_data base_province &quot;select
+                              id,
+                              name,
+                              region_id,
+                              area_code,
+                              iso_code,
+                              iso_3166_2
+                            from base_province&quot;
+}
+
+import_base_region(){
+  import_data base_region &quot;select
+                              id,
+                              region_name
+                            from base_region&quot;
+}
+
+import_base_trademark(){
+  import_data base_trademark &quot;select
+                                id,
+                                tm_name
+                              from base_trademark&quot;
+}
+
+import_spu_info(){
+  import_data spu_info &quot;select
+                            id,
+                            spu_name,
+                            category3_id,
+                            tm_id
+                          from spu_info&quot;
+}
+
+import_favor_info(){
+  import_data favor_info &quot;select
+                          id,
+                          user_id,
+                          sku_id,
+                          spu_id,
+                          is_cancel,
+                          create_time,
+                          cancel_time
+                        from favor_info&quot;
+}
+
+import_cart_info(){
+  import_data cart_info &quot;select
+                        id,
+                        user_id,
+                        sku_id,
+                        cart_price,
+                        sku_num,
+                        sku_name,
+                        create_time,
+                        operate_time,
+                        is_ordered,
+                        order_time,
+                        source_type,
+                        source_id
+                      from cart_info&quot;
+}
+
+import_coupon_info(){
+  import_data coupon_info &quot;select
+                          id,
+                          coupon_name,
+                          coupon_type,
+                          condition_amount,
+                          condition_num,
+                          activity_id,
+                          benefit_amount,
+                          benefit_discount,
+                          create_time,
+                          range_type,
+                          limit_num,
+                          taken_count,
+                          start_time,
+                          end_time,
+                          operate_time,
+                          expire_time
+                        from coupon_info&quot;
+}
+
+import_activity_info(){
+  import_data activity_info &quot;select
+                              id,
+                              activity_name,
+                              activity_type,
+                              start_time,
+                              end_time,
+                              create_time
+                            from activity_info&quot;
+}
+
+import_activity_rule(){
+    import_data activity_rule &quot;select
+                                    id,
+                                    activity_id,
+                                    activity_type,
+                                    condition_amount,
+                                    condition_num,
+                                    benefit_amount,
+                                    benefit_discount,
+                                    benefit_level
+                                from activity_rule&quot;
+}
+
+import_base_dic(){
+    import_data base_dic &quot;select
+                            dic_code,
+                            dic_name,
+                            parent_code,
+                            create_time,
+                            operate_time
+                          from base_dic&quot;
+}
+
+
+import_order_detail_activity(){
+    import_data order_detail_activity &quot;select
+                                                                id,
+                                                                order_id,
+                                                                order_detail_id,
+                                                                activity_id,
+                                                                activity_rule_id,
+                                                                sku_id,
+                                                                create_time
+                                                            from order_detail_activity&quot;
+}
+
+
+import_order_detail_coupon(){
+    import_data order_detail_coupon &quot;select
+                                                                id,
+								                                                order_id,
+                                                                order_detail_id,
+                                                                coupon_id,
+                                                                coupon_use_id,
+                                                                sku_id,
+                                                                create_time
+                                                            from order_detail_coupon&quot;
+}
+
+
+import_refund_payment(){
+    import_data refund_payment &quot;select
+                                                        id,
+                                                        out_trade_no,
+                                                        order_id,
+                                                        sku_id,
+                                                        payment_type,
+                                                        trade_no,
+                                                        total_amount,
+                                                        subject,
+                                                        refund_status,
+                                                        create_time,
+                                                        callback_time
+                                                    from refund_payment&quot;                                                    
+
+}
+
+import_sku_attr_value(){
+    import_data sku_attr_value &quot;select
+                                                    id,
+                                                    attr_id,
+                                                    value_id,
+                                                    sku_id,
+                                                    attr_name,
+                                                    value_name
+                                                from sku_attr_value&quot;
+}
+
+
+import_sku_sale_attr_value(){
+    import_data sku_sale_attr_value &quot;select
+                                                            id,
+                                                            sku_id,
+                                                            spu_id,
+                                                            sale_attr_value_id,
+                                                            sale_attr_id,
+                                                            sale_attr_name,
+                                                            sale_attr_value_name
+                                                        from sku_sale_attr_value&quot;
+}
+
+case $1 in
+  &quot;order_info&quot;)
+     import_order_info
+;;
+  &quot;base_category1&quot;)
+     import_base_category1
+;;
+  &quot;base_category2&quot;)
+     import_base_category2
+;;
+  &quot;base_category3&quot;)
+     import_base_category3
+;;
+  &quot;order_detail&quot;)
+     import_order_detail
+;;
+  &quot;sku_info&quot;)
+     import_sku_info
+;;
+  &quot;user_info&quot;)
+     import_user_info
+;;
+  &quot;payment_info&quot;)
+     import_payment_info
+;;
+  &quot;base_province&quot;)
+     import_base_province
+;;
+  &quot;base_region&quot;)
+     import_base_region
+;;
+  &quot;base_trademark&quot;)
+     import_base_trademark
+;;
+  &quot;activity_info&quot;)
+      import_activity_info
+;;
+  &quot;cart_info&quot;)
+      import_cart_info
+;;
+  &quot;comment_info&quot;)
+      import_comment_info
+;;
+  &quot;coupon_info&quot;)
+      import_coupon_info
+;;
+  &quot;coupon_use&quot;)
+      import_coupon_use
+;;
+  &quot;favor_info&quot;)
+      import_favor_info
+;;
+  &quot;order_refund_info&quot;)
+      import_order_refund_info
+;;
+  &quot;order_status_log&quot;)
+      import_order_status_log
+;;
+  &quot;spu_info&quot;)
+      import_spu_info
+;;
+  &quot;activity_rule&quot;)
+      import_activity_rule
+;;
+  &quot;base_dic&quot;)
+      import_base_dic
+;;
+  &quot;order_detail_activity&quot;)
+      import_order_detail_activity
+;;
+  &quot;order_detail_coupon&quot;)
+      import_order_detail_coupon
+;;
+  &quot;refund_payment&quot;)
+      import_refund_payment
+;;
+  &quot;sku_attr_value&quot;)
+      import_sku_attr_value
+;;
+  &quot;sku_sale_attr_value&quot;)
+      import_sku_sale_attr_value
+;;
+  &quot;all&quot;)
+   import_base_category1
+   import_base_category2
+   import_base_category3
+   import_order_info
+   import_order_detail
+   import_sku_info
+   import_user_info
+   import_payment_info
+   import_base_region
+   import_base_province
+   import_base_trademark
+   import_activity_info
+   import_cart_info
+   import_comment_info
+   import_coupon_use
+   import_coupon_info
+   import_favor_info
+   import_order_refund_info
+   import_order_status_log
+   import_spu_info
+   import_activity_rule
+   import_base_dic
+   import_order_detail_activity
+   import_order_detail_coupon
+   import_refund_payment
+   import_sku_attr_value
+   import_sku_sale_attr_value
+;;
+esac
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br><span class="line-number">31</span><br><span class="line-number">32</span><br><span class="line-number">33</span><br><span class="line-number">34</span><br><span class="line-number">35</span><br><span class="line-number">36</span><br><span class="line-number">37</span><br><span class="line-number">38</span><br><span class="line-number">39</span><br><span class="line-number">40</span><br><span class="line-number">41</span><br><span class="line-number">42</span><br><span class="line-number">43</span><br><span class="line-number">44</span><br><span class="line-number">45</span><br><span class="line-number">46</span><br><span class="line-number">47</span><br><span class="line-number">48</span><br><span class="line-number">49</span><br><span class="line-number">50</span><br><span class="line-number">51</span><br><span class="line-number">52</span><br><span class="line-number">53</span><br><span class="line-number">54</span><br><span class="line-number">55</span><br><span class="line-number">56</span><br><span class="line-number">57</span><br><span class="line-number">58</span><br><span class="line-number">59</span><br><span class="line-number">60</span><br><span class="line-number">61</span><br><span class="line-number">62</span><br><span class="line-number">63</span><br><span class="line-number">64</span><br><span class="line-number">65</span><br><span class="line-number">66</span><br><span class="line-number">67</span><br><span class="line-number">68</span><br><span class="line-number">69</span><br><span class="line-number">70</span><br><span class="line-number">71</span><br><span class="line-number">72</span><br><span class="line-number">73</span><br><span class="line-number">74</span><br><span class="line-number">75</span><br><span class="line-number">76</span><br><span class="line-number">77</span><br><span class="line-number">78</span><br><span class="line-number">79</span><br><span class="line-number">80</span><br><span class="line-number">81</span><br><span class="line-number">82</span><br><span class="line-number">83</span><br><span class="line-number">84</span><br><span class="line-number">85</span><br><span class="line-number">86</span><br><span class="line-number">87</span><br><span class="line-number">88</span><br><span class="line-number">89</span><br><span class="line-number">90</span><br><span class="line-number">91</span><br><span class="line-number">92</span><br><span class="line-number">93</span><br><span class="line-number">94</span><br><span class="line-number">95</span><br><span class="line-number">96</span><br><span class="line-number">97</span><br><span class="line-number">98</span><br><span class="line-number">99</span><br><span class="line-number">100</span><br><span class="line-number">101</span><br><span class="line-number">102</span><br><span class="line-number">103</span><br><span class="line-number">104</span><br><span class="line-number">105</span><br><span class="line-number">106</span><br><span class="line-number">107</span><br><span class="line-number">108</span><br><span class="line-number">109</span><br><span class="line-number">110</span><br><span class="line-number">111</span><br><span class="line-number">112</span><br><span class="line-number">113</span><br><span class="line-number">114</span><br><span class="line-number">115</span><br><span class="line-number">116</span><br><span class="line-number">117</span><br><span class="line-number">118</span><br><span class="line-number">119</span><br><span class="line-number">120</span><br><span class="line-number">121</span><br><span class="line-number">122</span><br><span class="line-number">123</span><br><span class="line-number">124</span><br><span class="line-number">125</span><br><span class="line-number">126</span><br><span class="line-number">127</span><br><span class="line-number">128</span><br><span class="line-number">129</span><br><span class="line-number">130</span><br><span class="line-number">131</span><br><span class="line-number">132</span><br><span class="line-number">133</span><br><span class="line-number">134</span><br><span class="line-number">135</span><br><span class="line-number">136</span><br><span class="line-number">137</span><br><span class="line-number">138</span><br><span class="line-number">139</span><br><span class="line-number">140</span><br><span class="line-number">141</span><br><span class="line-number">142</span><br><span class="line-number">143</span><br><span class="line-number">144</span><br><span class="line-number">145</span><br><span class="line-number">146</span><br><span class="line-number">147</span><br><span class="line-number">148</span><br><span class="line-number">149</span><br><span class="line-number">150</span><br><span class="line-number">151</span><br><span class="line-number">152</span><br><span class="line-number">153</span><br><span class="line-number">154</span><br><span class="line-number">155</span><br><span class="line-number">156</span><br><span class="line-number">157</span><br><span class="line-number">158</span><br><span class="line-number">159</span><br><span class="line-number">160</span><br><span class="line-number">161</span><br><span class="line-number">162</span><br><span class="line-number">163</span><br><span class="line-number">164</span><br><span class="line-number">165</span><br><span class="line-number">166</span><br><span class="line-number">167</span><br><span class="line-number">168</span><br><span class="line-number">169</span><br><span class="line-number">170</span><br><span class="line-number">171</span><br><span class="line-number">172</span><br><span class="line-number">173</span><br><span class="line-number">174</span><br><span class="line-number">175</span><br><span class="line-number">176</span><br><span class="line-number">177</span><br><span class="line-number">178</span><br><span class="line-number">179</span><br><span class="line-number">180</span><br><span class="line-number">181</span><br><span class="line-number">182</span><br><span class="line-number">183</span><br><span class="line-number">184</span><br><span class="line-number">185</span><br><span class="line-number">186</span><br><span class="line-number">187</span><br><span class="line-number">188</span><br><span class="line-number">189</span><br><span class="line-number">190</span><br><span class="line-number">191</span><br><span class="line-number">192</span><br><span class="line-number">193</span><br><span class="line-number">194</span><br><span class="line-number">195</span><br><span class="line-number">196</span><br><span class="line-number">197</span><br><span class="line-number">198</span><br><span class="line-number">199</span><br><span class="line-number">200</span><br><span class="line-number">201</span><br><span class="line-number">202</span><br><span class="line-number">203</span><br><span class="line-number">204</span><br><span class="line-number">205</span><br><span class="line-number">206</span><br><span class="line-number">207</span><br><span class="line-number">208</span><br><span class="line-number">209</span><br><span class="line-number">210</span><br><span class="line-number">211</span><br><span class="line-number">212</span><br><span class="line-number">213</span><br><span class="line-number">214</span><br><span class="line-number">215</span><br><span class="line-number">216</span><br><span class="line-number">217</span><br><span class="line-number">218</span><br><span class="line-number">219</span><br><span class="line-number">220</span><br><span class="line-number">221</span><br><span class="line-number">222</span><br><span class="line-number">223</span><br><span class="line-number">224</span><br><span class="line-number">225</span><br><span class="line-number">226</span><br><span class="line-number">227</span><br><span class="line-number">228</span><br><span class="line-number">229</span><br><span class="line-number">230</span><br><span class="line-number">231</span><br><span class="line-number">232</span><br><span class="line-number">233</span><br><span class="line-number">234</span><br><span class="line-number">235</span><br><span class="line-number">236</span><br><span class="line-number">237</span><br><span class="line-number">238</span><br><span class="line-number">239</span><br><span class="line-number">240</span><br><span class="line-number">241</span><br><span class="line-number">242</span><br><span class="line-number">243</span><br><span class="line-number">244</span><br><span class="line-number">245</span><br><span class="line-number">246</span><br><span class="line-number">247</span><br><span class="line-number">248</span><br><span class="line-number">249</span><br><span class="line-number">250</span><br><span class="line-number">251</span><br><span class="line-number">252</span><br><span class="line-number">253</span><br><span class="line-number">254</span><br><span class="line-number">255</span><br><span class="line-number">256</span><br><span class="line-number">257</span><br><span class="line-number">258</span><br><span class="line-number">259</span><br><span class="line-number">260</span><br><span class="line-number">261</span><br><span class="line-number">262</span><br><span class="line-number">263</span><br><span class="line-number">264</span><br><span class="line-number">265</span><br><span class="line-number">266</span><br><span class="line-number">267</span><br><span class="line-number">268</span><br><span class="line-number">269</span><br><span class="line-number">270</span><br><span class="line-number">271</span><br><span class="line-number">272</span><br><span class="line-number">273</span><br><span class="line-number">274</span><br><span class="line-number">275</span><br><span class="line-number">276</span><br><span class="line-number">277</span><br><span class="line-number">278</span><br><span class="line-number">279</span><br><span class="line-number">280</span><br><span class="line-number">281</span><br><span class="line-number">282</span><br><span class="line-number">283</span><br><span class="line-number">284</span><br><span class="line-number">285</span><br><span class="line-number">286</span><br><span class="line-number">287</span><br><span class="line-number">288</span><br><span class="line-number">289</span><br><span class="line-number">290</span><br><span class="line-number">291</span><br><span class="line-number">292</span><br><span class="line-number">293</span><br><span class="line-number">294</span><br><span class="line-number">295</span><br><span class="line-number">296</span><br><span class="line-number">297</span><br><span class="line-number">298</span><br><span class="line-number">299</span><br><span class="line-number">300</span><br><span class="line-number">301</span><br><span class="line-number">302</span><br><span class="line-number">303</span><br><span class="line-number">304</span><br><span class="line-number">305</span><br><span class="line-number">306</span><br><span class="line-number">307</span><br><span class="line-number">308</span><br><span class="line-number">309</span><br><span class="line-number">310</span><br><span class="line-number">311</span><br><span class="line-number">312</span><br><span class="line-number">313</span><br><span class="line-number">314</span><br><span class="line-number">315</span><br><span class="line-number">316</span><br><span class="line-number">317</span><br><span class="line-number">318</span><br><span class="line-number">319</span><br><span class="line-number">320</span><br><span class="line-number">321</span><br><span class="line-number">322</span><br><span class="line-number">323</span><br><span class="line-number">324</span><br><span class="line-number">325</span><br><span class="line-number">326</span><br><span class="line-number">327</span><br><span class="line-number">328</span><br><span class="line-number">329</span><br><span class="line-number">330</span><br><span class="line-number">331</span><br><span class="line-number">332</span><br><span class="line-number">333</span><br><span class="line-number">334</span><br><span class="line-number">335</span><br><span class="line-number">336</span><br><span class="line-number">337</span><br><span class="line-number">338</span><br><span class="line-number">339</span><br><span class="line-number">340</span><br><span class="line-number">341</span><br><span class="line-number">342</span><br><span class="line-number">343</span><br><span class="line-number">344</span><br><span class="line-number">345</span><br><span class="line-number">346</span><br><span class="line-number">347</span><br><span class="line-number">348</span><br><span class="line-number">349</span><br><span class="line-number">350</span><br><span class="line-number">351</span><br><span class="line-number">352</span><br><span class="line-number">353</span><br><span class="line-number">354</span><br><span class="line-number">355</span><br><span class="line-number">356</span><br><span class="line-number">357</span><br><span class="line-number">358</span><br><span class="line-number">359</span><br><span class="line-number">360</span><br><span class="line-number">361</span><br><span class="line-number">362</span><br><span class="line-number">363</span><br><span class="line-number">364</span><br><span class="line-number">365</span><br><span class="line-number">366</span><br><span class="line-number">367</span><br><span class="line-number">368</span><br><span class="line-number">369</span><br><span class="line-number">370</span><br><span class="line-number">371</span><br><span class="line-number">372</span><br><span class="line-number">373</span><br><span class="line-number">374</span><br><span class="line-number">375</span><br><span class="line-number">376</span><br><span class="line-number">377</span><br><span class="line-number">378</span><br><span class="line-number">379</span><br><span class="line-number">380</span><br><span class="line-number">381</span><br><span class="line-number">382</span><br><span class="line-number">383</span><br><span class="line-number">384</span><br><span class="line-number">385</span><br><span class="line-number">386</span><br><span class="line-number">387</span><br><span class="line-number">388</span><br><span class="line-number">389</span><br><span class="line-number">390</span><br><span class="line-number">391</span><br><span class="line-number">392</span><br><span class="line-number">393</span><br><span class="line-number">394</span><br><span class="line-number">395</span><br><span class="line-number">396</span><br><span class="line-number">397</span><br><span class="line-number">398</span><br><span class="line-number">399</span><br><span class="line-number">400</span><br><span class="line-number">401</span><br><span class="line-number">402</span><br><span class="line-number">403</span><br><span class="line-number">404</span><br><span class="line-number">405</span><br><span class="line-number">406</span><br><span class="line-number">407</span><br><span class="line-number">408</span><br><span class="line-number">409</span><br><span class="line-number">410</span><br><span class="line-number">411</span><br><span class="line-number">412</span><br><span class="line-number">413</span><br><span class="line-number">414</span><br><span class="line-number">415</span><br><span class="line-number">416</span><br><span class="line-number">417</span><br><span class="line-number">418</span><br><span class="line-number">419</span><br><span class="line-number">420</span><br><span class="line-number">421</span><br><span class="line-number">422</span><br><span class="line-number">423</span><br><span class="line-number">424</span><br><span class="line-number">425</span><br><span class="line-number">426</span><br><span class="line-number">427</span><br><span class="line-number">428</span><br><span class="line-number">429</span><br><span class="line-number">430</span><br><span class="line-number">431</span><br><span class="line-number">432</span><br><span class="line-number">433</span><br><span class="line-number">434</span><br><span class="line-number">435</span><br><span class="line-number">436</span><br><span class="line-number">437</span><br><span class="line-number">438</span><br><span class="line-number">439</span><br><span class="line-number">440</span><br><span class="line-number">441</span><br><span class="line-number">442</span><br><span class="line-number">443</span><br><span class="line-number">444</span><br><span class="line-number">445</span><br><span class="line-number">446</span><br><span class="line-number">447</span><br><span class="line-number">448</span><br><span class="line-number">449</span><br><span class="line-number">450</span><br><span class="line-number">451</span><br><span class="line-number">452</span><br><span class="line-number">453</span><br><span class="line-number">454</span><br><span class="line-number">455</span><br><span class="line-number">456</span><br><span class="line-number">457</span><br><span class="line-number">458</span><br><span class="line-number">459</span><br><span class="line-number">460</span><br><span class="line-number">461</span><br><span class="line-number">462</span><br><span class="line-number">463</span><br><span class="line-number">464</span><br><span class="line-number">465</span><br><span class="line-number">466</span><br><span class="line-number">467</span><br><span class="line-number">468</span><br><span class="line-number">469</span><br><span class="line-number">470</span><br><span class="line-number">471</span><br><span class="line-number">472</span><br><span class="line-number">473</span><br><span class="line-number">474</span><br><span class="line-number">475</span><br><span class="line-number">476</span><br><span class="line-number">477</span><br><span class="line-number">478</span><br><span class="line-number">479</span><br><span class="line-number">480</span><br><span class="line-number">481</span><br><span class="line-number">482</span><br><span class="line-number">483</span><br><span class="line-number">484</span><br><span class="line-number">485</span><br><span class="line-number">486</span><br><span class="line-number">487</span><br></div></div><p>传入 表名 or all   + 日期</p> <p>每日同步:</p> <div class="language-shell line-numbers-mode"><pre class="language-shell"><code><span class="token shebang important">#! /bin/bash</span>
+
+<span class="token assign-left variable">APP</span><span class="token operator">=</span>gmall
+<span class="token assign-left variable">sqoop</span><span class="token operator">=</span>/opt/module/sqoop/bin/sqoop
+
+<span class="token keyword">if</span> <span class="token punctuation">[</span> -n <span class="token string">&quot;<span class="token variable">$2</span>&quot;</span> <span class="token punctuation">]</span> <span class="token punctuation">;</span><span class="token keyword">then</span>
+    <span class="token assign-left variable">do_date</span><span class="token operator">=</span><span class="token variable">$2</span>
+<span class="token keyword">else</span>
+    <span class="token assign-left variable">do_date</span><span class="token operator">=</span><span class="token variable"><span class="token variable">`</span><span class="token function">date</span> -d <span class="token string">'-1 day'</span> +%F<span class="token variable">`</span></span>
+<span class="token keyword">fi</span>
+
+<span class="token function-name function">import_data</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+<span class="token variable">$sqoop</span> <span class="token function">import</span> <span class="token punctuation">\</span>
+--connect jdbc:mysql://node1:3306/<span class="token variable">$APP</span> <span class="token punctuation">\</span>
+--username root <span class="token punctuation">\</span>
+--password hadoop <span class="token punctuation">\</span>
+--target-dir /origin_data/<span class="token variable">$APP</span>/db/<span class="token variable">$1</span>/<span class="token variable">$do_date</span> <span class="token punctuation">\</span>
+--delete-target-dir <span class="token punctuation">\</span>
+--query <span class="token string">&quot;<span class="token variable">$2</span> and  \<span class="token variable">$CONDITIONS</span>&quot;</span> <span class="token punctuation">\</span>
+--num-mappers <span class="token number">1</span> <span class="token punctuation">\</span>
+--fields-terminated-by <span class="token string">'\t'</span> <span class="token punctuation">\</span>
+--compress <span class="token punctuation">\</span>
+--compression-codec lzop <span class="token punctuation">\</span>
+--null-string <span class="token string">'\\N'</span> <span class="token punctuation">\</span>
+--null-non-string <span class="token string">'\\N'</span>
+
+hadoop jar /opt/module/hadoop-3.1.3/share/hadoop/common/hadoop-lzo-0.4.20.jar com.hadoop.compression.lzo.DistributedLzoIndexer /origin_data/<span class="token variable">$APP</span>/db/<span class="token variable">$1</span>/<span class="token variable">$do_date</span>
+<span class="token punctuation">}</span>
+
+<span class="token function-name function">import_order_info</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+  import_data order_info <span class="token string">&quot;select
+                            id, 
+                            total_amount, 
+                            order_status, 
+                            user_id, 
+                            payment_way,
+                            delivery_address,
+                            out_trade_no, 
+                            create_time, 
+                            operate_time,
+                            expire_time,
+                            tracking_no,
+                            province_id,
+                            activity_reduce_amount,
+                            coupon_reduce_amount,                            
+                            original_total_amount,
+                            feight_fee,
+                            feight_fee_reduce      
+                        from order_info
+                        where (date_format(create_time,'%Y-%m-%d')='<span class="token variable">$do_date</span>' 
+                        or date_format(operate_time,'%Y-%m-%d')='<span class="token variable">$do_date</span>')&quot;</span>
+<span class="token punctuation">}</span>
+
+<span class="token function-name function">import_coupon_use</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+  import_data coupon_use <span class="token string">&quot;select
+                          id,
+                          coupon_id,
+                          user_id,
+                          order_id,
+                          coupon_status,
+                          get_time,
+                          using_time,
+                          used_time,
+                          expire_time
+                        from coupon_use
+                        where (date_format(get_time,'%Y-%m-%d')='<span class="token variable">$do_date</span>'
+                        or date_format(using_time,'%Y-%m-%d')='<span class="token variable">$do_date</span>'
+                        or date_format(used_time,'%Y-%m-%d')='<span class="token variable">$do_date</span>'
+                        or date_format(expire_time,'%Y-%m-%d')='<span class="token variable">$do_date</span>')&quot;</span>
+<span class="token punctuation">}</span>
+
+<span class="token function-name function">import_order_status_log</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+  import_data order_status_log <span class="token string">&quot;select
+                                  id,
+                                  order_id,
+                                  order_status,
+                                  operate_time
+                                from order_status_log
+                                where date_format(operate_time,'%Y-%m-%d')='<span class="token variable">$do_date</span>'&quot;</span>
+<span class="token punctuation">}</span>
+
+<span class="token function-name function">import_user_info</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+  import_data <span class="token string">&quot;user_info&quot;</span> <span class="token string">&quot;select 
+                            id,
+                            login_name,
+                            nick_name,
+                            name,
+                            phone_num,
+                            email,
+                            user_level, 
+                            birthday,
+                            gender,
+                            create_time,
+                            operate_time
+                          from user_info 
+                          where (DATE_FORMAT(create_time,'%Y-%m-%d')='<span class="token variable">$do_date</span>' 
+                          or DATE_FORMAT(operate_time,'%Y-%m-%d')='<span class="token variable">$do_date</span>')&quot;</span>
+<span class="token punctuation">}</span>
+
+<span class="token function-name function">import_order_detail</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+  import_data order_detail <span class="token string">&quot;select 
+                              id,
+                              order_id, 
+                              sku_id,
+                              sku_name,
+                              order_price,
+                              sku_num, 
+                              create_time,
+                              source_type,
+                              source_id,
+                              split_total_amount,
+                              split_activity_amount,
+                              split_coupon_amount
+                            from order_detail 
+                            where DATE_FORMAT(create_time,'%Y-%m-%d')='<span class="token variable">$do_date</span>'&quot;</span>
+<span class="token punctuation">}</span>
+
+<span class="token function-name function">import_payment_info</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+  import_data <span class="token string">&quot;payment_info&quot;</span>  <span class="token string">&quot;select 
+                                id,  
+                                out_trade_no, 
+                                order_id, 
+                                user_id, 
+                                payment_type, 
+                                trade_no, 
+                                total_amount,  
+                                subject, 
+                                payment_status,
+                                create_time,
+                                callback_time 
+                              from payment_info 
+                              where (DATE_FORMAT(create_time,'%Y-%m-%d')='<span class="token variable">$do_date</span>' 
+                              or DATE_FORMAT(callback_time,'%Y-%m-%d')='<span class="token variable">$do_date</span>')&quot;</span>
+<span class="token punctuation">}</span>
+
+<span class="token function-name function">import_comment_info</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+  import_data comment_info <span class="token string">&quot;select
+                              id,
+                              user_id,
+                              sku_id,
+                              spu_id,
+                              order_id,
+                              appraise,
+                              create_time
+                            from comment_info
+                            where date_format(create_time,'%Y-%m-%d')='<span class="token variable">$do_date</span>'&quot;</span>
+<span class="token punctuation">}</span>
+
+<span class="token function-name function">import_order_refund_info</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+  import_data order_refund_info <span class="token string">&quot;select
+                                id,
+                                user_id,
+                                order_id,
+                                sku_id,
+                                refund_type,
+                                refund_num,
+                                refund_amount,
+                                refund_reason_type,
+                                refund_status,
+                                create_time
+                              from order_refund_info
+                              where date_format(create_time,'%Y-%m-%d')='<span class="token variable">$do_date</span>'&quot;</span>
+<span class="token punctuation">}</span>
+
+<span class="token function-name function">import_sku_info</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+  import_data sku_info <span class="token string">&quot;select 
+                          id,
+                          spu_id,
+                          price,
+                          sku_name,
+                          sku_desc,
+                          weight,
+                          tm_id,
+                          category3_id,
+                          is_sale,
+                          create_time
+                        from sku_info where 1=1&quot;</span>
+<span class="token punctuation">}</span>
+
+<span class="token function-name function">import_base_category1</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+  import_data <span class="token string">&quot;base_category1&quot;</span> <span class="token string">&quot;select 
+                                  id,
+                                  name 
+                                from base_category1 where 1=1&quot;</span>
+<span class="token punctuation">}</span>
+
+<span class="token function-name function">import_base_category2</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+  import_data <span class="token string">&quot;base_category2&quot;</span> <span class="token string">&quot;select
+                                  id,
+                                  name,
+                                  category1_id 
+                                from base_category2 where 1=1&quot;</span>
+<span class="token punctuation">}</span>
+
+<span class="token function-name function">import_base_category3</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+  import_data <span class="token string">&quot;base_category3&quot;</span> <span class="token string">&quot;select
+                                  id,
+                                  name,
+                                  category2_id
+                                from base_category3 where 1=1&quot;</span>
+<span class="token punctuation">}</span>
+
+<span class="token function-name function">import_base_province</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+  import_data base_province <span class="token string">&quot;select
+                              id,
+                              name,
+                              region_id,
+                              area_code,
+                              iso_code,
+                              iso_3166_2
+                            from base_province
+                            where 1=1&quot;</span>
+<span class="token punctuation">}</span>
+
+<span class="token function-name function">import_base_region</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+  import_data base_region <span class="token string">&quot;select
+                              id,
+                              region_name
+                            from base_region
+                            where 1=1&quot;</span>
+<span class="token punctuation">}</span>
+
+<span class="token function-name function">import_base_trademark</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+  import_data base_trademark <span class="token string">&quot;select
+                                id,
+                                tm_name
+                              from base_trademark
+                              where 1=1&quot;</span>
+<span class="token punctuation">}</span>
+
+<span class="token function-name function">import_spu_info</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+  import_data spu_info <span class="token string">&quot;select
+                            id,
+                            spu_name,
+                            category3_id,
+                            tm_id
+                          from spu_info
+                          where 1=1&quot;</span>
+<span class="token punctuation">}</span>
+
+<span class="token function-name function">import_favor_info</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+  import_data favor_info <span class="token string">&quot;select
+                          id,
+                          user_id,
+                          sku_id,
+                          spu_id,
+                          is_cancel,
+                          create_time,
+                          cancel_time
+                        from favor_info
+                        where 1=1&quot;</span>
+<span class="token punctuation">}</span>
+
+<span class="token function-name function">import_cart_info</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+  import_data cart_info <span class="token string">&quot;select
+                        id,
+                        user_id,
+                        sku_id,
+                        cart_price,
+                        sku_num,
+                        sku_name,
+                        create_time,
+                        operate_time,
+                        is_ordered,
+                        order_time,
+                        source_type,
+                        source_id
+                      from cart_info
+                      where 1=1&quot;</span>
+<span class="token punctuation">}</span>
+
+<span class="token function-name function">import_coupon_info</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+  import_data coupon_info <span class="token string">&quot;select
+                          id,
+                          coupon_name,
+                          coupon_type,
+                          condition_amount,
+                          condition_num,
+                          activity_id,
+                          benefit_amount,
+                          benefit_discount,
+                          create_time,
+                          range_type,
+                          limit_num,
+                          taken_count,
+                          start_time,
+                          end_time,
+                          operate_time,
+                          expire_time
+                        from coupon_info
+                        where 1=1&quot;</span>
+<span class="token punctuation">}</span>
+
+<span class="token function-name function">import_activity_info</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+  import_data activity_info <span class="token string">&quot;select
+                              id,
+                              activity_name,
+                              activity_type,
+                              start_time,
+                              end_time,
+                              create_time
+                            from activity_info
+                            where 1=1&quot;</span>
+<span class="token punctuation">}</span>
+
+<span class="token function-name function">import_activity_rule</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+    import_data activity_rule <span class="token string">&quot;select
+                                    id,
+                                    activity_id,
+                                    activity_type,
+                                    condition_amount,
+                                    condition_num,
+                                    benefit_amount,
+                                    benefit_discount,
+                                    benefit_level
+                                from activity_rule
+                                where 1=1&quot;</span>
+<span class="token punctuation">}</span>
+
+<span class="token function-name function">import_base_dic</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+    import_data base_dic <span class="token string">&quot;select
+                            dic_code,
+                            dic_name,
+                            parent_code,
+                            create_time,
+                            operate_time
+                          from base_dic
+                          where 1=1&quot;</span>
+<span class="token punctuation">}</span>
+
+
+<span class="token function-name function">import_order_detail_activity</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+    import_data order_detail_activity <span class="token string">&quot;select
+                                                                id,
+                                                                order_id,
+                                                                order_detail_id,
+                                                                activity_id,
+                                                                activity_rule_id,
+                                                                sku_id,
+                                                                create_time
+                                                            from order_detail_activity
+                                                            where date_format(create_time,'%Y-%m-%d')='<span class="token variable">$do_date</span>'&quot;</span>
+<span class="token punctuation">}</span>
+
+
+<span class="token function-name function">import_order_detail_coupon</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+    import_data order_detail_coupon <span class="token string">&quot;select
+                                                                id,
+								                                                order_id,
+                                                                order_detail_id,
+                                                                coupon_id,
+                                                                coupon_use_id,
+                                                                sku_id,
+                                                                create_time
+                                                            from order_detail_coupon
+                                                            where date_format(create_time,'%Y-%m-%d')='<span class="token variable">$do_date</span>'&quot;</span>
+<span class="token punctuation">}</span>
+
+
+<span class="token function-name function">import_refund_payment</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+    import_data refund_payment <span class="token string">&quot;select
+                                                        id,
+                                                        out_trade_no,
+                                                        order_id,
+                                                        sku_id,
+                                                        payment_type,
+                                                        trade_no,
+                                                        total_amount,
+                                                        subject,
+                                                        refund_status,
+                                                        create_time,
+                                                        callback_time
+                                                    from refund_payment
+                                                    where (DATE_FORMAT(create_time,'%Y-%m-%d')='<span class="token variable">$do_date</span>' 
+                                                    or DATE_FORMAT(callback_time,'%Y-%m-%d')='<span class="token variable">$do_date</span>')&quot;</span>                                                    
+
+<span class="token punctuation">}</span>
+
+<span class="token function-name function">import_sku_attr_value</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+    import_data sku_attr_value <span class="token string">&quot;select
+                                                    id,
+                                                    attr_id,
+                                                    value_id,
+                                                    sku_id,
+                                                    attr_name,
+                                                    value_name
+                                                from sku_attr_value
+                                                where 1=1&quot;</span>
+<span class="token punctuation">}</span>
+
+
+<span class="token function-name function">import_sku_sale_attr_value</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+    import_data sku_sale_attr_value <span class="token string">&quot;select
+                                                            id,
+                                                            sku_id,
+                                                            spu_id,
+                                                            sale_attr_value_id,
+                                                            sale_attr_id,
+                                                            sale_attr_name,
+                                                            sale_attr_value_name
+                                                        from sku_sale_attr_value
+                                                        where 1=1&quot;</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">case</span> <span class="token variable">$1</span> <span class="token keyword">in</span>
+  <span class="token string">&quot;order_info&quot;</span><span class="token punctuation">)</span>
+     import_order_info
+<span class="token punctuation">;</span><span class="token punctuation">;</span>
+  <span class="token string">&quot;base_category1&quot;</span><span class="token punctuation">)</span>
+     import_base_category1
+<span class="token punctuation">;</span><span class="token punctuation">;</span>
+  <span class="token string">&quot;base_category2&quot;</span><span class="token punctuation">)</span>
+     import_base_category2
+<span class="token punctuation">;</span><span class="token punctuation">;</span>
+  <span class="token string">&quot;base_category3&quot;</span><span class="token punctuation">)</span>
+     import_base_category3
+<span class="token punctuation">;</span><span class="token punctuation">;</span>
+  <span class="token string">&quot;order_detail&quot;</span><span class="token punctuation">)</span>
+     import_order_detail
+<span class="token punctuation">;</span><span class="token punctuation">;</span>
+  <span class="token string">&quot;sku_info&quot;</span><span class="token punctuation">)</span>
+     import_sku_info
+<span class="token punctuation">;</span><span class="token punctuation">;</span>
+  <span class="token string">&quot;user_info&quot;</span><span class="token punctuation">)</span>
+     import_user_info
+<span class="token punctuation">;</span><span class="token punctuation">;</span>
+  <span class="token string">&quot;payment_info&quot;</span><span class="token punctuation">)</span>
+     import_payment_info
+<span class="token punctuation">;</span><span class="token punctuation">;</span>
+  <span class="token string">&quot;base_province&quot;</span><span class="token punctuation">)</span>
+     import_base_province
+<span class="token punctuation">;</span><span class="token punctuation">;</span>
+  <span class="token string">&quot;activity_info&quot;</span><span class="token punctuation">)</span>
+      import_activity_info
+<span class="token punctuation">;</span><span class="token punctuation">;</span>
+  <span class="token string">&quot;cart_info&quot;</span><span class="token punctuation">)</span>
+      import_cart_info
+<span class="token punctuation">;</span><span class="token punctuation">;</span>
+  <span class="token string">&quot;comment_info&quot;</span><span class="token punctuation">)</span>
+      import_comment_info
+<span class="token punctuation">;</span><span class="token punctuation">;</span>
+  <span class="token string">&quot;coupon_info&quot;</span><span class="token punctuation">)</span>
+      import_coupon_info
+<span class="token punctuation">;</span><span class="token punctuation">;</span>
+  <span class="token string">&quot;coupon_use&quot;</span><span class="token punctuation">)</span>
+      import_coupon_use
+<span class="token punctuation">;</span><span class="token punctuation">;</span>
+  <span class="token string">&quot;favor_info&quot;</span><span class="token punctuation">)</span>
+      import_favor_info
+<span class="token punctuation">;</span><span class="token punctuation">;</span>
+  <span class="token string">&quot;order_refund_info&quot;</span><span class="token punctuation">)</span>
+      import_order_refund_info
+<span class="token punctuation">;</span><span class="token punctuation">;</span>
+  <span class="token string">&quot;order_status_log&quot;</span><span class="token punctuation">)</span>
+      import_order_status_log
+<span class="token punctuation">;</span><span class="token punctuation">;</span>
+  <span class="token string">&quot;spu_info&quot;</span><span class="token punctuation">)</span>
+      import_spu_info
+<span class="token punctuation">;</span><span class="token punctuation">;</span>
+  <span class="token string">&quot;activity_rule&quot;</span><span class="token punctuation">)</span>
+      import_activity_rule
+<span class="token punctuation">;</span><span class="token punctuation">;</span>
+  <span class="token string">&quot;base_dic&quot;</span><span class="token punctuation">)</span>
+      import_base_dic
+<span class="token punctuation">;</span><span class="token punctuation">;</span>
+  <span class="token string">&quot;order_detail_activity&quot;</span><span class="token punctuation">)</span>
+      import_order_detail_activity
+<span class="token punctuation">;</span><span class="token punctuation">;</span>
+  <span class="token string">&quot;order_detail_coupon&quot;</span><span class="token punctuation">)</span>
+      import_order_detail_coupon
+<span class="token punctuation">;</span><span class="token punctuation">;</span>
+  <span class="token string">&quot;refund_payment&quot;</span><span class="token punctuation">)</span>
+      import_refund_payment
+<span class="token punctuation">;</span><span class="token punctuation">;</span>
+  <span class="token string">&quot;sku_attr_value&quot;</span><span class="token punctuation">)</span>
+      import_sku_attr_value
+<span class="token punctuation">;</span><span class="token punctuation">;</span>
+  <span class="token string">&quot;sku_sale_attr_value&quot;</span><span class="token punctuation">)</span>
+      import_sku_sale_attr_value
+<span class="token punctuation">;</span><span class="token punctuation">;</span>
+<span class="token string">&quot;all&quot;</span><span class="token punctuation">)</span>
+   import_base_category1
+   import_base_category2
+   import_base_category3
+   import_order_info
+   import_order_detail
+   import_sku_info
+   import_user_info
+   import_payment_info
+   import_base_trademark
+   import_activity_info
+   import_cart_info
+   import_comment_info
+   import_coupon_use
+   import_coupon_info
+   import_favor_info
+   import_order_refund_info
+   import_order_status_log
+   import_spu_info
+   import_activity_rule
+   import_base_dic
+   import_order_detail_activity
+   import_order_detail_coupon
+   import_refund_payment
+   import_sku_attr_value
+   import_sku_sale_attr_value
+<span class="token punctuation">;</span><span class="token punctuation">;</span>
+<span class="token keyword">esac</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br><span class="line-number">31</span><br><span class="line-number">32</span><br><span class="line-number">33</span><br><span class="line-number">34</span><br><span class="line-number">35</span><br><span class="line-number">36</span><br><span class="line-number">37</span><br><span class="line-number">38</span><br><span class="line-number">39</span><br><span class="line-number">40</span><br><span class="line-number">41</span><br><span class="line-number">42</span><br><span class="line-number">43</span><br><span class="line-number">44</span><br><span class="line-number">45</span><br><span class="line-number">46</span><br><span class="line-number">47</span><br><span class="line-number">48</span><br><span class="line-number">49</span><br><span class="line-number">50</span><br><span class="line-number">51</span><br><span class="line-number">52</span><br><span class="line-number">53</span><br><span class="line-number">54</span><br><span class="line-number">55</span><br><span class="line-number">56</span><br><span class="line-number">57</span><br><span class="line-number">58</span><br><span class="line-number">59</span><br><span class="line-number">60</span><br><span class="line-number">61</span><br><span class="line-number">62</span><br><span class="line-number">63</span><br><span class="line-number">64</span><br><span class="line-number">65</span><br><span class="line-number">66</span><br><span class="line-number">67</span><br><span class="line-number">68</span><br><span class="line-number">69</span><br><span class="line-number">70</span><br><span class="line-number">71</span><br><span class="line-number">72</span><br><span class="line-number">73</span><br><span class="line-number">74</span><br><span class="line-number">75</span><br><span class="line-number">76</span><br><span class="line-number">77</span><br><span class="line-number">78</span><br><span class="line-number">79</span><br><span class="line-number">80</span><br><span class="line-number">81</span><br><span class="line-number">82</span><br><span class="line-number">83</span><br><span class="line-number">84</span><br><span class="line-number">85</span><br><span class="line-number">86</span><br><span class="line-number">87</span><br><span class="line-number">88</span><br><span class="line-number">89</span><br><span class="line-number">90</span><br><span class="line-number">91</span><br><span class="line-number">92</span><br><span class="line-number">93</span><br><span class="line-number">94</span><br><span class="line-number">95</span><br><span class="line-number">96</span><br><span class="line-number">97</span><br><span class="line-number">98</span><br><span class="line-number">99</span><br><span class="line-number">100</span><br><span class="line-number">101</span><br><span class="line-number">102</span><br><span class="line-number">103</span><br><span class="line-number">104</span><br><span class="line-number">105</span><br><span class="line-number">106</span><br><span class="line-number">107</span><br><span class="line-number">108</span><br><span class="line-number">109</span><br><span class="line-number">110</span><br><span class="line-number">111</span><br><span class="line-number">112</span><br><span class="line-number">113</span><br><span class="line-number">114</span><br><span class="line-number">115</span><br><span class="line-number">116</span><br><span class="line-number">117</span><br><span class="line-number">118</span><br><span class="line-number">119</span><br><span class="line-number">120</span><br><span class="line-number">121</span><br><span class="line-number">122</span><br><span class="line-number">123</span><br><span class="line-number">124</span><br><span class="line-number">125</span><br><span class="line-number">126</span><br><span class="line-number">127</span><br><span class="line-number">128</span><br><span class="line-number">129</span><br><span class="line-number">130</span><br><span class="line-number">131</span><br><span class="line-number">132</span><br><span class="line-number">133</span><br><span class="line-number">134</span><br><span class="line-number">135</span><br><span class="line-number">136</span><br><span class="line-number">137</span><br><span class="line-number">138</span><br><span class="line-number">139</span><br><span class="line-number">140</span><br><span class="line-number">141</span><br><span class="line-number">142</span><br><span class="line-number">143</span><br><span class="line-number">144</span><br><span class="line-number">145</span><br><span class="line-number">146</span><br><span class="line-number">147</span><br><span class="line-number">148</span><br><span class="line-number">149</span><br><span class="line-number">150</span><br><span class="line-number">151</span><br><span class="line-number">152</span><br><span class="line-number">153</span><br><span class="line-number">154</span><br><span class="line-number">155</span><br><span class="line-number">156</span><br><span class="line-number">157</span><br><span class="line-number">158</span><br><span class="line-number">159</span><br><span class="line-number">160</span><br><span class="line-number">161</span><br><span class="line-number">162</span><br><span class="line-number">163</span><br><span class="line-number">164</span><br><span class="line-number">165</span><br><span class="line-number">166</span><br><span class="line-number">167</span><br><span class="line-number">168</span><br><span class="line-number">169</span><br><span class="line-number">170</span><br><span class="line-number">171</span><br><span class="line-number">172</span><br><span class="line-number">173</span><br><span class="line-number">174</span><br><span class="line-number">175</span><br><span class="line-number">176</span><br><span class="line-number">177</span><br><span class="line-number">178</span><br><span class="line-number">179</span><br><span class="line-number">180</span><br><span class="line-number">181</span><br><span class="line-number">182</span><br><span class="line-number">183</span><br><span class="line-number">184</span><br><span class="line-number">185</span><br><span class="line-number">186</span><br><span class="line-number">187</span><br><span class="line-number">188</span><br><span class="line-number">189</span><br><span class="line-number">190</span><br><span class="line-number">191</span><br><span class="line-number">192</span><br><span class="line-number">193</span><br><span class="line-number">194</span><br><span class="line-number">195</span><br><span class="line-number">196</span><br><span class="line-number">197</span><br><span class="line-number">198</span><br><span class="line-number">199</span><br><span class="line-number">200</span><br><span class="line-number">201</span><br><span class="line-number">202</span><br><span class="line-number">203</span><br><span class="line-number">204</span><br><span class="line-number">205</span><br><span class="line-number">206</span><br><span class="line-number">207</span><br><span class="line-number">208</span><br><span class="line-number">209</span><br><span class="line-number">210</span><br><span class="line-number">211</span><br><span class="line-number">212</span><br><span class="line-number">213</span><br><span class="line-number">214</span><br><span class="line-number">215</span><br><span class="line-number">216</span><br><span class="line-number">217</span><br><span class="line-number">218</span><br><span class="line-number">219</span><br><span class="line-number">220</span><br><span class="line-number">221</span><br><span class="line-number">222</span><br><span class="line-number">223</span><br><span class="line-number">224</span><br><span class="line-number">225</span><br><span class="line-number">226</span><br><span class="line-number">227</span><br><span class="line-number">228</span><br><span class="line-number">229</span><br><span class="line-number">230</span><br><span class="line-number">231</span><br><span class="line-number">232</span><br><span class="line-number">233</span><br><span class="line-number">234</span><br><span class="line-number">235</span><br><span class="line-number">236</span><br><span class="line-number">237</span><br><span class="line-number">238</span><br><span class="line-number">239</span><br><span class="line-number">240</span><br><span class="line-number">241</span><br><span class="line-number">242</span><br><span class="line-number">243</span><br><span class="line-number">244</span><br><span class="line-number">245</span><br><span class="line-number">246</span><br><span class="line-number">247</span><br><span class="line-number">248</span><br><span class="line-number">249</span><br><span class="line-number">250</span><br><span class="line-number">251</span><br><span class="line-number">252</span><br><span class="line-number">253</span><br><span class="line-number">254</span><br><span class="line-number">255</span><br><span class="line-number">256</span><br><span class="line-number">257</span><br><span class="line-number">258</span><br><span class="line-number">259</span><br><span class="line-number">260</span><br><span class="line-number">261</span><br><span class="line-number">262</span><br><span class="line-number">263</span><br><span class="line-number">264</span><br><span class="line-number">265</span><br><span class="line-number">266</span><br><span class="line-number">267</span><br><span class="line-number">268</span><br><span class="line-number">269</span><br><span class="line-number">270</span><br><span class="line-number">271</span><br><span class="line-number">272</span><br><span class="line-number">273</span><br><span class="line-number">274</span><br><span class="line-number">275</span><br><span class="line-number">276</span><br><span class="line-number">277</span><br><span class="line-number">278</span><br><span class="line-number">279</span><br><span class="line-number">280</span><br><span class="line-number">281</span><br><span class="line-number">282</span><br><span class="line-number">283</span><br><span class="line-number">284</span><br><span class="line-number">285</span><br><span class="line-number">286</span><br><span class="line-number">287</span><br><span class="line-number">288</span><br><span class="line-number">289</span><br><span class="line-number">290</span><br><span class="line-number">291</span><br><span class="line-number">292</span><br><span class="line-number">293</span><br><span class="line-number">294</span><br><span class="line-number">295</span><br><span class="line-number">296</span><br><span class="line-number">297</span><br><span class="line-number">298</span><br><span class="line-number">299</span><br><span class="line-number">300</span><br><span class="line-number">301</span><br><span class="line-number">302</span><br><span class="line-number">303</span><br><span class="line-number">304</span><br><span class="line-number">305</span><br><span class="line-number">306</span><br><span class="line-number">307</span><br><span class="line-number">308</span><br><span class="line-number">309</span><br><span class="line-number">310</span><br><span class="line-number">311</span><br><span class="line-number">312</span><br><span class="line-number">313</span><br><span class="line-number">314</span><br><span class="line-number">315</span><br><span class="line-number">316</span><br><span class="line-number">317</span><br><span class="line-number">318</span><br><span class="line-number">319</span><br><span class="line-number">320</span><br><span class="line-number">321</span><br><span class="line-number">322</span><br><span class="line-number">323</span><br><span class="line-number">324</span><br><span class="line-number">325</span><br><span class="line-number">326</span><br><span class="line-number">327</span><br><span class="line-number">328</span><br><span class="line-number">329</span><br><span class="line-number">330</span><br><span class="line-number">331</span><br><span class="line-number">332</span><br><span class="line-number">333</span><br><span class="line-number">334</span><br><span class="line-number">335</span><br><span class="line-number">336</span><br><span class="line-number">337</span><br><span class="line-number">338</span><br><span class="line-number">339</span><br><span class="line-number">340</span><br><span class="line-number">341</span><br><span class="line-number">342</span><br><span class="line-number">343</span><br><span class="line-number">344</span><br><span class="line-number">345</span><br><span class="line-number">346</span><br><span class="line-number">347</span><br><span class="line-number">348</span><br><span class="line-number">349</span><br><span class="line-number">350</span><br><span class="line-number">351</span><br><span class="line-number">352</span><br><span class="line-number">353</span><br><span class="line-number">354</span><br><span class="line-number">355</span><br><span class="line-number">356</span><br><span class="line-number">357</span><br><span class="line-number">358</span><br><span class="line-number">359</span><br><span class="line-number">360</span><br><span class="line-number">361</span><br><span class="line-number">362</span><br><span class="line-number">363</span><br><span class="line-number">364</span><br><span class="line-number">365</span><br><span class="line-number">366</span><br><span class="line-number">367</span><br><span class="line-number">368</span><br><span class="line-number">369</span><br><span class="line-number">370</span><br><span class="line-number">371</span><br><span class="line-number">372</span><br><span class="line-number">373</span><br><span class="line-number">374</span><br><span class="line-number">375</span><br><span class="line-number">376</span><br><span class="line-number">377</span><br><span class="line-number">378</span><br><span class="line-number">379</span><br><span class="line-number">380</span><br><span class="line-number">381</span><br><span class="line-number">382</span><br><span class="line-number">383</span><br><span class="line-number">384</span><br><span class="line-number">385</span><br><span class="line-number">386</span><br><span class="line-number">387</span><br><span class="line-number">388</span><br><span class="line-number">389</span><br><span class="line-number">390</span><br><span class="line-number">391</span><br><span class="line-number">392</span><br><span class="line-number">393</span><br><span class="line-number">394</span><br><span class="line-number">395</span><br><span class="line-number">396</span><br><span class="line-number">397</span><br><span class="line-number">398</span><br><span class="line-number">399</span><br><span class="line-number">400</span><br><span class="line-number">401</span><br><span class="line-number">402</span><br><span class="line-number">403</span><br><span class="line-number">404</span><br><span class="line-number">405</span><br><span class="line-number">406</span><br><span class="line-number">407</span><br><span class="line-number">408</span><br><span class="line-number">409</span><br><span class="line-number">410</span><br><span class="line-number">411</span><br><span class="line-number">412</span><br><span class="line-number">413</span><br><span class="line-number">414</span><br><span class="line-number">415</span><br><span class="line-number">416</span><br><span class="line-number">417</span><br><span class="line-number">418</span><br><span class="line-number">419</span><br><span class="line-number">420</span><br><span class="line-number">421</span><br><span class="line-number">422</span><br><span class="line-number">423</span><br><span class="line-number">424</span><br><span class="line-number">425</span><br><span class="line-number">426</span><br><span class="line-number">427</span><br><span class="line-number">428</span><br><span class="line-number">429</span><br><span class="line-number">430</span><br><span class="line-number">431</span><br><span class="line-number">432</span><br><span class="line-number">433</span><br><span class="line-number">434</span><br><span class="line-number">435</span><br><span class="line-number">436</span><br><span class="line-number">437</span><br><span class="line-number">438</span><br><span class="line-number">439</span><br><span class="line-number">440</span><br><span class="line-number">441</span><br><span class="line-number">442</span><br><span class="line-number">443</span><br><span class="line-number">444</span><br><span class="line-number">445</span><br><span class="line-number">446</span><br><span class="line-number">447</span><br><span class="line-number">448</span><br><span class="line-number">449</span><br><span class="line-number">450</span><br><span class="line-number">451</span><br><span class="line-number">452</span><br><span class="line-number">453</span><br><span class="line-number">454</span><br><span class="line-number">455</span><br><span class="line-number">456</span><br><span class="line-number">457</span><br><span class="line-number">458</span><br><span class="line-number">459</span><br><span class="line-number">460</span><br><span class="line-number">461</span><br><span class="line-number">462</span><br><span class="line-number">463</span><br><span class="line-number">464</span><br><span class="line-number">465</span><br><span class="line-number">466</span><br><span class="line-number">467</span><br><span class="line-number">468</span><br><span class="line-number">469</span><br><span class="line-number">470</span><br><span class="line-number">471</span><br><span class="line-number">472</span><br><span class="line-number">473</span><br><span class="line-number">474</span><br><span class="line-number">475</span><br><span class="line-number">476</span><br><span class="line-number">477</span><br><span class="line-number">478</span><br><span class="line-number">479</span><br><span class="line-number">480</span><br><span class="line-number">481</span><br><span class="line-number">482</span><br><span class="line-number">483</span><br><span class="line-number">484</span><br><span class="line-number">485</span><br><span class="line-number">486</span><br><span class="line-number">487</span><br><span class="line-number">488</span><br><span class="line-number">489</span><br><span class="line-number">490</span><br><span class="line-number">491</span><br><span class="line-number">492</span><br><span class="line-number">493</span><br><span class="line-number">494</span><br><span class="line-number">495</span><br><span class="line-number">496</span><br><span class="line-number">497</span><br><span class="line-number">498</span><br><span class="line-number">499</span><br><span class="line-number">500</span><br><span class="line-number">501</span><br><span class="line-number">502</span><br><span class="line-number">503</span><br><span class="line-number">504</span><br><span class="line-number">505</span><br><span class="line-number">506</span><br><span class="line-number">507</span><br><span class="line-number">508</span><br></div></div><h2 id="数仓分层"><a href="#数仓分层" class="header-anchor">#</a> 数仓分层</h2> <blockquote><p>ODS(原)=&gt;  (DWD(细)=&gt;DWS(汇)=&gt;DWT(题))(DIM 维度)=&gt;ADS(应)</p></blockquote> <ul><li><p>ODS：存放加载<strong>原始数据</strong>，不做处理</p></li> <li><p>DWD: 对ODS的数据进行<strong>清洗</strong>(去除空值，过滤脏数据，超出范围的数据，脱敏)等  <strong>一行一次行为</strong></p></li> <li><p>DIM:维度数据，对业务的描述信息，何人，何时、何地等，</p> <ul><li><p><strong>DWS</strong> 对DWD按<strong>每天</strong>，进行轻度汇总。 <strong>一行一天的行为</strong></p></li> <li><p><strong>DWT</strong>  :对DWS按数据<strong>累加</strong>汇总   <strong>一行一个对象的行为累积行为</strong>       :最近n天</p></li></ul></li> <li><p>ADS: 为各种<strong>统计报表</strong>提供数据</p></li></ul> <p><strong>分层的意义</strong></p> <ul><li>把复杂问题简单化</li> <li>减少重复开发</li> <li>隔离原始数据</li></ul> <p><strong>数仓和数集的区别</strong>：</p> <ul><li><p>数仓：为整个企业部门提供决策</p></li> <li><p>数据集市：部门级，微型数据仓库</p> <blockquote><p>独立形：(数据来自业务)</p> <p>从属形：(数据来自数据仓库)</p></blockquote></li></ul> <p><strong>数仓命名规范</strong>：</p> <ul><li><p><strong>表命名</strong>：对应层级的表加上其前缀，例如特殊表 temp_ 前缀命名，DWT层用 dwt_命名</p></li> <li><p><strong>脚本命名</strong>：数据源_to_目标_db/log.sh  ： <strong>行为以log为后缀</strong>，<strong>业务以db为后缀</strong></p></li> <li><p><strong>表字段</strong>：</p> <blockquote><p>数量 bigint、金额decimal(16,2)   16位，2位小数</p> <p>字符串：(名字，描述)、主键外键</p> <p>时间戳：bigint</p></blockquote></li></ul> <p><strong>数仓理论</strong>：</p> <ul><li><p><strong>关系建模</strong>  (业务系统)</p> <blockquote><p>范式：降低数据的庸余性，保证数据的一致性</p> <ul><li>拆分多，jion多</li> <li><strong>1范式=&gt;2范式=&gt;3范式</strong>=&gt;4范式=&gt;5范式</li></ul> <blockquote><p>属性<strong>不可切</strong>=&gt;不存在非主键部分依赖</p></blockquote> <p>函数依赖：完全(直接)、部分(间接)、传递(联系)</p> <p><strong>表多</strong></p></blockquote></li> <li><p><strong>维度建模</strong> (普遍，重点学习)</p> <blockquote><ul><li><p><strong>事实表</strong>(具体的业务)</p> <blockquote><p>非常大，内容相对窄，列数少，经常发生变化</p> <p>每行代表一个业务事件（下单支付等）</p> <p><strong>分类</strong></p> <ul><li><strong>事务型</strong> ：每个事件为单位，不发生变化,<strong>增量同步</strong></li> <li><strong>周期型快照</strong>：保存固定时间间隔的数据   <strong>只关心结果</strong>，<strong>全量同步</strong></li> <li><strong>累积型快照</strong>：跟踪业务事实变化，会发生周期性变化的业务，<strong>新增+变化</strong></li></ul></blockquote></li> <li><p><strong>维度表</strong>(业务的描述信息)</p> <blockquote><p>表宽，行数相对较小，内容相对固定（编码表）</p> <p>例：地区等</p> <p><strong>分类</strong>：</p> <ul><li><p><strong>星型模型</strong>：<strong>性能优先</strong></p></li> <li><p>雪花模型：<strong>灵活优先</strong></p> <blockquote><p>(会对维度表进行规范化)</p></blockquote></li> <li><p>星座模型（多个星型模型交着在一起）</p></li></ul></blockquote></li></ul> <p><strong>查询</strong>简单<strong>效率高</strong></p></blockquote></li></ul> <h3 id="仓库建模"><a href="#仓库建模" class="header-anchor">#</a> 仓库建模</h3> <ol><li><p><strong>ODS层</strong></p> <blockquote><ul><li>用户行为：创建外部表一行字段代表一个用户行为，对时间分区，定时装载</li> <li>业务行为</li></ul> <p>主要对比采集的数据进行建表</p></blockquote></li> <li><p><strong>DIM层和DWD层</strong></p> <blockquote><p><strong>星型模型</strong></p> <ul><li><p>DIM: 存储维度表</p></li> <li><p>DWD: 存储事实表 (<strong>以业务过程为驱动</strong>)</p></li></ul> <p>选择业务过程=&gt;声明粒度=&gt;确认维度=&gt;确认事实</p> <p>DWS、DWT、ADS<strong>以需求为驱动</strong></p></blockquote> <p>从DIM层开始主要列式存储+lzo压缩，装载从ods层查询拼接加载</p> <p><strong>读取的表是单纯lzo文件并且创建了索引</strong>，此时需要关闭map端的小文件合并</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>set hive.input.format=org.apache.hadoop.hive.ql.io.HiveInputFormat;
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div><p>通常时间维度表不来自业务系统，如果是格式问题，可以先创建临时表，再insert+select插入</p> <p><strong>拉链表</strong>：更加高效的存储历史状态</p> <ul><li><p>使用场景：全量最新、全量历史</p> <blockquote><p><strong>生效开始</strong> 日期&lt;=某个日期 且   <strong>生效结束</strong> 日期&gt;=某个日期：得到全量切片  ：<strong>全量历史</strong></p> <p>过滤最新：<strong>全量最新</strong></p></blockquote></li></ul> <p><strong>get_json_object 解析json</strong></p> <div class="language- line-numbers-mode"><pre class="language-text"><code>select get_json_object('jison','$[下标取元素]')
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div><p>分析数据按行列分析  自定义hive函数</p> <p><strong>DWS：避免重复计算，保存计算结果</strong></p> <p><strong>常用计算处理函数</strong></p> <ul><li><p>nvl :<code>NVL（表达式1，表达式2）</code>  同一类型   1</p> <blockquote><p>coalesce(3)、if(2)</p></blockquote></li> <li><p><strong>日期处理函数</strong>：</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>格式化
+date_format('2020-06-14','yyyy-MM');
+加减
+date_add('2020-06-14',-1);
+下一天
+next_day('2020-06-14','MO');//下周一：（Monday，Tuesday、Wednesday、Thursday、Friday、Saturday、Sunday）
+date_add(next_day('2020-06-14','MO'),-7);//当前周一
+当月最后一天日期
+last_day('2020-06-14');
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br></div></div></li> <li><p>复杂数据类型定义</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>map&lt;string,string&gt; :map(key,value) :取值  map['key']
+array&lt;string&gt;: array(val1,val2..)  ：取值 map['下标']
+struct&lt;id:int,name:string,age:int&gt; :named_stuct(name1,val1,....) :取值 strict.name1
+//struct和array嵌套定义
+array&lt;struct&lt;id:int,name:string,age:int&gt;&gt;
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br></div></div></li></ul> <blockquote><p>例：统计 <strong>count(*)</strong> or <strong>sum(if(条件,1,0)）)</strong></p></blockquote></li> <li><p><strong>ADS层报表应用层</strong></p> <blockquote><p>每个需求对应一张表，每张表有可能有多个指标</p> <p>例：访客、用户、商品、订单、优惠卷、活动等</p> <p>1，7，30日的统计</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>-- 例如 1 7 30 下单和购买次数
+select
+	id
+	recent_days,
+	case
+		when recent_days=1 then order_1count,
+		when recent_days=7 then order_7count,
+		when recent_days=30 then order_30count,
+	end  别名 -- 下单次数
+	case
+		when recent_days=1 then pay_1count,
+		when recent_days=7 then pay_7count,
+		when recent_days=30 then pay_30count,
+	end  别名 -- 购买次数	
+from 表名 lateral view explode(array(1,7,30)) tmp as recent_days  -- 把1，7，30炸开成一列创建临时视图
+where dt='2020-06-14' --今天的日期
+
+--然后再获取维度信息关联即可，获取人数可以sum(if)or count()
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br></div></div></blockquote></li></ol> <blockquote><p>hive 分区表指定外面字段(虚拟优化)，分桶表里面字段(真实)</p> <p><strong>if</strong> 函数 和 <strong>nvl</strong> 函数  动态分区</p> <p><strong>concat()</strong> 拼接值。</p> <p><code>jps -ml</code> 查看详细进程信息</p></blockquote> <h3 id="调度流程"><a href="#调度流程" class="header-anchor">#</a> 调度流程</h3> <p><strong>AZKABAN</strong></p> <blockquote><p>把之前的装载sql封装成一个个可接收参数脚本，用Azkaban，来调度</p></blockquote> <blockquote><p>最终ads报表数据用sqoop导入mysql中</p> <p>画出依赖流程图，按照流程图编写依赖参数，如果动态传参进来，需要在执行azkaban时配置参数即可。</p> <p>如果是每日定时也许传参但不传值即可。</p> <p>如果脚本和环境没有分发需要指定运行的节点：<code>useExecutor</code>  id需要在数据库查看</p></blockquote> <h2 id="数据报表"><a href="#数据报表" class="header-anchor">#</a> 数据报表</h2> <ul><li><p>后台语言+报表框架</p></li> <li><p>现成的报表工具</p> <ul><li><p>收费</p></li> <li><p>开源 ：superset</p> <blockquote><p>安装部署superset</p> <p>了解对接数据源的方式</p> <p>了解基本使用方法。</p></blockquote></li></ul></li></ul> <h2 id="即席查询"><a href="#即席查询" class="header-anchor">#</a> 即席查询</h2> <blockquote><p><strong>可自定义查询条件</strong>，然后统计报表</p> <p>是一个探索数据的过程，实现交互式效果</p> <p>多维度洞察数据，把起转换称知识。</p></blockquote> <ul><li><p>Kylin</p> <blockquote><p>了解其安装部署，和等维度概念</p> <p>掌握页面上的基本使用、还有一些优化手段(聚合组、衍生度、Rowkey等)</p> <p>与BI工具的集成：<strong>Zepplin</strong>（<strong>笔记本</strong>，可<strong>写sql查询</strong>和<strong>简单的报表</strong>）</p> <p><strong>BI工具</strong>：对接数据源，写SQL、报表。</p></blockquote></li> <li><p>Presto</p> <blockquote><p>了解起按照和部署、和优化手段</p></blockquote></li> <li><p>德鲁伊等</p></li></ul> <h2 id="集群监控"><a href="#集群监控" class="header-anchor">#</a> 集群监控</h2> <p>掌握Zabbix的部署和基本使用，模板的和参数配置（主机、监控项、触发器、动作）</p> <p>以及<strong>集成Grafana做可视化展示</strong>，作图。对接数据源，配置，作图即可。</p> <h2 id="数据安全"><a href="#数据安全" class="header-anchor">#</a> 数据安全</h2> <p><strong>认证+授权</strong></p> <p><strong>认证</strong>：<strong>Kerberos</strong></p> <p>了解Kerberos安装和基本使用，以及集成hadoop和hive等。</p> <h3 id="安全模式的搭建"><a href="#安全模式的搭建" class="header-anchor">#</a> <strong>安全模式的搭建</strong></h3> <p><strong>改动说明</strong>：</p> <p>此处统一<strong>将数仓的全部数据</strong>资源的所有者<strong>设为hive用户</strong>，全流程的每步操作均认证为<strong>hive用户</strong>。</p> <ul><li><p>用户准备 （<strong>存在可跳过</strong>）</p> <div class="language-shell line-numbers-mode"><pre class="language-shell"><code><span class="token comment">#3台   id hive 查看用户</span>
+<span class="token function">useradd</span> hive -g hadoop
+<span class="token builtin class-name">echo</span> hive <span class="token operator">|</span> <span class="token function">passwd</span> --stdin hive
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br></div></div></li> <li><p>为用户创建主体（之前那个创建是不一样的,这需要创建）</p> <div class="language-shell line-numbers-mode"><pre class="language-shell"><code><span class="token comment">#创建主体</span>
+kadmin -padmin/admin -whadoop -q<span class="token string">&quot;addprinc -randkey hive&quot;</span>
+<span class="token comment">#生成keytab文件</span>
+kadmin -padmin/admin -whadoop -q<span class="token string">&quot;xst -k /etc/security/keytab/hive.keytab hive&quot;</span>
+<span class="token comment">#修改文件所有者和访问权限</span>
+<span class="token function">chown</span> hive:hadoop /etc/security/keytab/hive.keytab
+<span class="token function">chmod</span> <span class="token number">440</span> /etc/security/keytab/hive.keytab
+<span class="token comment">#分发改文件 （指定azkaban允许节点就不用）</span>
+ xsync /etc/security/keytab/hive.keytab
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br></div></div></li> <li><p>修改数据采集通道</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>#用户行为日志 flume=&gt;kafka=&gt;flume(node3)   修改其sink 添加认证即可
+#node3
+ vim /opt/module/flume/conf/kafka-flume-hdfs.conf
+ 
+a1.sinks.k1.hdfs.kerberosPrincipal=hive@EXAMPLE.COM
+a1.sinks.k1.hdfs.kerberosKeytab=/etc/security/keytab/hive.keytab
+
+#业务脚本
+#node1
+vim /home/hadoop101/bin/mysql_to_hdfs.sh
+在顶部增加如下认证语句 先认证再操作
+kinit -kt /etc/security/keytab/hive.keytab hive
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br></div></div></li> <li><p>各层脚本的修改</p> <div class="language-shell line-numbers-mode"><pre class="language-shell"><code>数仓各层脚本均需在顶部加入如下认证语句
+kinit -kt /etc/security/keytab/hive.keytab hive
+
+例：相对路径 在hadoop101/bin目录下执行
+<span class="token function">sed</span> -i <span class="token string">'1 a kinit -kt /etc/security/keytab/hive.keytab hive'</span> hdfs_to_ods_log.sh
+<span class="token function">sed</span> -i <span class="token string">'1 a kinit -kt /etc/security/keytab/hive.keytab hive'</span> hdfs_to_ods_db.sh
+<span class="token function">sed</span> -i <span class="token string">'1 a kinit -kt /etc/security/keytab/hive.keytab hive'</span> ods_to_dwd_log.sh
+<span class="token function">sed</span> -i <span class="token string">'1 a kinit -kt /etc/security/keytab/hive.keytab hive'</span> ods_to_dim_db.sh
+<span class="token function">sed</span> -i <span class="token string">'1 a kinit -kt /etc/security/keytab/hive.keytab hive'</span> ods_to_dwd_db.sh
+<span class="token function">sed</span> -i <span class="token string">'1 a kinit -kt /etc/security/keytab/hive.keytab hive'</span> dwd_to_dws.sh
+<span class="token function">sed</span> -i <span class="token string">'1 a kinit -kt /etc/security/keytab/hive.keytab hive'</span> dws_to_dwt.sh
+<span class="token function">sed</span> -i <span class="token string">'1 a kinit -kt /etc/security/keytab/hive.keytab hive'</span> dwt_to_ads.sh
+<span class="token function">sed</span> -i <span class="token string">'1 a kinit -kt /etc/security/keytab/hive.keytab hive'</span> hdfs_to_mysql.sh
+
+注：表示在第1行 a添加 参数 到 脚本
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br></div></div></li> <li><p>修改hdfs特定路径的所有者</p> <div class="language-shell line-numbers-mode"><pre class="language-shell"><code><span class="token comment">#认证</span>
+ kinit hdfs/hadoop
+<span class="token comment">#修改数据采集目标路径</span>
+ hadoop fs -chown -R hive:hadoop /origin_data
+<span class="token comment">#修改数仓表所在路径</span>
+ hadoop fs -chown -R hive:hadoop /warehouse
+<span class="token comment">#修改hive （相当于home目录）</span>
+ hadoop fs -chown -R hive:hadoop /user/hive 
+<span class="token comment">#修改spark.eventLog.dir路径</span>
+ hadoop fs -chown -R hive:hadoop /spark-history
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br></div></div></li></ul> <h3 id="全流程调度测试"><a href="#全流程调度测试" class="header-anchor">#</a> <strong>全流程调度测试</strong></h3> <ul><li><p>生成数据</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>#启动flume和kafka    
+flume执行脚本采集，生成者消费者，flume消费脚本
+修改日志生成
+#修改业务数据
+java -jar 生成 
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br></div></div></li> <li><p>启动Azkaban</p> <blockquote><p>因为azkaban不需要直接和hdfs交互，只负责调用shell脚本(脚本里面有认证语句)，所以不用配置主体。</p></blockquote> <div class="language-shell line-numbers-mode"><pre class="language-shell"><code><span class="token comment">#在各节点创建azkaban用户（3台）</span>
+<span class="token function">useradd</span> azkaban -g hadoop
+<span class="token builtin class-name">echo</span> azkaban <span class="token operator">|</span> <span class="token function">passwd</span> --stdin azkaban
+
+<span class="token comment">#将各节点Azkaban安装路径所有者改为azkaban用户（3台）</span>
+<span class="token function">chown</span> -R azkaban:hadoop /opt/module/azkaban
+
+<span class="token comment">#使用azkaban用户启动Azkaban</span>
+ <span class="token number">1</span>. 启动Executor Server （3台）
+ <span class="token function">sudo</span> -i -u azkaban <span class="token function">bash</span> -c <span class="token string">&quot;cd /opt/module/azkaban/azkaban-exec;bin/start-exec.sh&quot;</span>
+ <span class="token number">2</span>. 激活Executor Server （执行直接在node1执行即可<span class="token punctuation">)</span>
+ <span class="token function">curl</span> http://node1:12321/executor?action<span class="token operator">=</span>activate
+ <span class="token function">curl</span> http://node2:12321/executor?action<span class="token operator">=</span>activate
+ <span class="token function">curl</span> http://node3:12321/executor?action<span class="token operator">=</span>activate
+ <span class="token number">3</span>. 启动web server  端口：8081
+ <span class="token function">sudo</span> -i -u azkaban <span class="token function">bash</span> -c <span class="token string">&quot;cd /opt/module/azkaban/azkaban-web;bin/start-web.sh&quot;</span>
+ <span class="token number">3</span>. 配置修改数仓各层脚本访问权限，确保azkaban用户能够访问到（node1就可以了，如果是随机调度，三台都要设置）
+ 	<span class="token comment">#设置访问组</span>
+	<span class="token function">chown</span> -R hadoop101:hadoop /home/hadoop101
+	<span class="token comment">#设置访问组的权限</span>
+	<span class="token function">chmod</span> <span class="token number">770</span> /home/hadoop101/
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br></div></div></li> <li><p><strong>全流程调度</strong>：执行情况：1. 指定节点调度，2.随机调度(需要分发对应的脚本)</p> <p>配置：参数：dt时间和对应执行节点<strong>useExecutor</strong>(在数据库里看id)</p></li></ul> <h3 id="presto配置"><a href="#presto配置" class="header-anchor">#</a> Presto配置</h3> <p><strong>改动说明</strong>：</p> <p>Presto集群开启Kerberos认证可只配置Presto Coordinator和Presto Cli之间进行认证，集群内部通讯可不进行认证。Presto Coordinator和Presto Cli之间的认证要求两者采用更为安全的HTTPS协议进行通讯。</p> <p>若Presto对接的是Hive数据源，由于其需要访问Hive的元数据和HDFS上的数据文件，故也需要对Hive Connector进行Kerberos认证。</p> <ul><li><p>用户准备</p> <div class="language-shell line-numbers-mode"><pre class="language-shell"><code><span class="token comment">#在所有节点创建presto系统用户（3台）</span>
+<span class="token function">useradd</span> presto -g hadoop
+<span class="token builtin class-name">echo</span> presto <span class="token operator">|</span> <span class="token function">passwd</span> --stdin presto
+
+<span class="token comment">#为Hive Connector创建Kerberos主体（node1)</span>
+  kadmin -padmin/admin -whadoop -q<span class="token string">&quot;addprinc -randkey presto&quot;</span>
+  kadmin -padmin/admin -whadoop -q<span class="token string">&quot;xst -k /etc/security/keytab/presto.keytab presto&quot;</span>
+  
+  <span class="token function">chown</span> presto:hadoop /etc/security/keytab/presto.keytab  <span class="token comment">#修改访问权限</span>
+  xsync /etc/security/keytab/presto.keytab   <span class="token comment">#分发</span>
+  
+<span class="token comment">#为Presto Coordinator创建Kerberos主体(node1)</span>
+	kadmin -padmin/admin -whadoop -q<span class="token string">&quot;addprinc -randkey presto/node1&quot;</span>
+	kadmin -padmin/admin -whadoop -q<span class="token string">&quot;xst -k /etc/security/keytab/presto.service.keytab presto/node1&quot;</span>
+	<span class="token function">chown</span> presto:hadoop /etc/security/keytab/presto.service.keytab <span class="token comment">#修改权限</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br></div></div></li> <li><p>创建HTTPS协议所需密钥对</p> <div class="language-shell line-numbers-mode"><pre class="language-shell"><code>注意： node1
+（1）alias（别名）需要和Presto Coordinator的Kerberos主体名保持一致
+（2）名字与姓氏 需要填写Coordinator所在的主机名
+<span class="token comment">#使用Java提供的keytool工具生成密钥对</span>
+keytool -genkeypair -alias presto -keyalg RSA -keystore /etc/security/keytab/keystore.jks
+
+输入密钥库口令:  hadoop
+再次输入新口令: 
+您的名字与姓氏是什么?
+  <span class="token punctuation">[</span>Unknown<span class="token punctuation">]</span>:  node1
+您的组织单位名称是什么?
+  <span class="token punctuation">[</span>Unknown<span class="token punctuation">]</span>:  
+您的组织名称是什么?
+  <span class="token punctuation">[</span>Unknown<span class="token punctuation">]</span>:  
+您所在的城市或区域名称是什么?
+  <span class="token punctuation">[</span>Unknown<span class="token punctuation">]</span>:  
+您所在的省/市/自治区名称是什么?
+  <span class="token punctuation">[</span>Unknown<span class="token punctuation">]</span>:  
+该单位的双字母国家/地区代码是什么?
+  <span class="token punctuation">[</span>Unknown<span class="token punctuation">]</span>:  
+<span class="token assign-left variable">CN</span><span class="token operator">=</span>node1, <span class="token assign-left variable">OU</span><span class="token operator">=</span>Unknown, <span class="token assign-left variable">O</span><span class="token operator">=</span>Unknown, <span class="token assign-left variable">L</span><span class="token operator">=</span>Unknown, <span class="token assign-left variable">ST</span><span class="token operator">=</span>Unknown, <span class="token assign-left variable">C</span><span class="token operator">=</span>Unknown是否正确?
+  <span class="token punctuation">[</span>否<span class="token punctuation">]</span>:  y
+
+输入 <span class="token operator">&lt;</span>presto<span class="token operator">&gt;</span> 的密钥口令
+    <span class="token punctuation">(</span>如果和密钥库口令相同, 按回车<span class="token punctuation">)</span>:
+    
+<span class="token comment">#修改keystore文件的所有者和访问权限</span>
+	<span class="token function">chown</span> presto:hadoop /etc/security/keytab/keystore.jks
+	<span class="token function">chmod</span> <span class="token number">660</span> /etc/security/keytab/keystore.jks
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br></div></div></li> <li><p>修改Presto Coordinator配置文件</p> <div class="language-shell line-numbers-mode"><pre class="language-shell"><code><span class="token comment"># 修改Presto Coordinator配置文件</span>
+	<span class="token function">vim</span> /opt/module/presto/etc/config.properties
+
+http-server.authentication.type<span class="token operator">=</span>KERBEROS
+http.server.authentication.krb5.service-name<span class="token operator">=</span>presto
+http.server.authentication.krb5.keytab<span class="token operator">=</span>/etc/security/keytab/presto.service.keytab
+http.authentication.krb5.config<span class="token operator">=</span>/etc/krb5.conf
+http-server.https.enabled<span class="token operator">=</span>true
+http-server.https.port<span class="token operator">=</span><span class="token number">7778</span>
+http-server.https.keystore.path<span class="token operator">=</span>/etc/security/keytab/keystore.jks
+http-server.https.keystore.key<span class="token operator">=</span>hadoop
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br></div></div></li> <li><p>修改Hive Connector配置文件(node1:)</p> <div class="language-shell line-numbers-mode"><pre class="language-shell"><code><span class="token comment">#在/opt/module/presto/etc/catalog/hive.properties中增加以下参数</span>
+<span class="token function">vim</span> /opt/module/presto/etc/catalog/hive.properties
+
+hive.metastore.authentication.type<span class="token operator">=</span>KERBEROS
+hive.metastore.service.principal<span class="token operator">=</span>hive/node1@EXAMPLE.COM
+hive.metastore.client.principal<span class="token operator">=</span>presto@EXAMPLE.COM
+hive.metastore.client.keytab<span class="token operator">=</span>/etc/security/keytab/presto.keytab
+
+hive.hdfs.authentication.type<span class="token operator">=</span>KERBEROS
+hive.hdfs.impersonation.enabled<span class="token operator">=</span>true
+hive.hdfs.presto.principal<span class="token operator">=</span>presto@EXAMPLE.COM
+hive.hdfs.presto.keytab<span class="token operator">=</span>/etc/security/keytab/presto.keytab
+hive.config.resources<span class="token operator">=</span>/opt/module/hadoop-3.1.3/etc/hadoop/core-site.xml,/opt/module/hadoop-3.1.3/etc/hadoop/hdfs-site.xml
+
+<span class="token comment">#分发/opt/module/presto/etc/catalog/hive.properties文件</span>
+xsync /opt/module/presto/etc/catalog/hive.properties
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br></div></div></li> <li><p>配置客户端Kerberos主体到用户名之间的映射规则</p> <div class="language-shell line-numbers-mode"><pre class="language-shell"><code><span class="token comment">#node1</span>
+<span class="token function">vim</span> /opt/module/presto/etc/access-control.properties
+ <span class="token comment">#添加</span>
+ access-control.name<span class="token operator">=</span>file
+ security.config-file<span class="token operator">=</span>etc/rules.json
+
+<span class="token function">vim</span> /opt/module/presto/etc/rules.json
+ <span class="token comment">#添加</span>
+ 
+<span class="token punctuation">{</span>
+  <span class="token string">&quot;catalogs&quot;</span><span class="token builtin class-name">:</span> <span class="token punctuation">[</span>
+    <span class="token punctuation">{</span>
+      <span class="token string">&quot;allow&quot;</span><span class="token builtin class-name">:</span> <span class="token boolean">true</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">]</span>,
+  <span class="token string">&quot;user_patterns&quot;</span><span class="token builtin class-name">:</span> <span class="token punctuation">[</span>
+    <span class="token string">&quot;(.*)&quot;</span>,
+    <span class="token string">&quot;([a-zA-Z]+)/?.*@.*&quot;</span>
+  <span class="token punctuation">]</span>
+<span class="token punctuation">}</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br></div></div></li> <li><p>配置Presto代理用户</p></li></ul> <div class="language-xml line-numbers-mode"><pre class="language-xml"><code>#修改hadoop配置文件
+vim $HADOOP_HOME/etc/hadoop/core-site.xml
+#添加
+
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>property</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>name</span><span class="token punctuation">&gt;</span></span>hadoop.proxyuser.presto.hosts<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>name</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>value</span><span class="token punctuation">&gt;</span></span>*<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>value</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>property</span><span class="token punctuation">&gt;</span></span>
+
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>property</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>name</span><span class="token punctuation">&gt;</span></span>hadoop.proxyuser.presto.groups<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>name</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>value</span><span class="token punctuation">&gt;</span></span>*<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>value</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>property</span><span class="token punctuation">&gt;</span></span>
+
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>property</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>name</span><span class="token punctuation">&gt;</span></span>hadoop.proxyuser.presto.users<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>name</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>value</span><span class="token punctuation">&gt;</span></span>*<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>value</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>property</span><span class="token punctuation">&gt;</span></span>
+
+#分发修改的文件
+xsync $HADOOP_HOME/etc/hadoop/core-site.xml
+
+#重启Hadoop集群
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br></div></div><ul><li>重启Presto集群</li></ul> <div class="language- line-numbers-mode"><pre class="language-text"><code>#3台 #如果启动就关闭
+/opt/module/presto/bin/launcher stop
+#修改Presto安装路径所有者为presto （3台）
+chown -R presto:hadoop /opt/module/presto
+#使用hive用户启动MetaStore服务（node1)
+sudo -i -u hive hive --service metastore
+#使用presto用户启动Presto集群(3台)
+sudo -i -u presto /opt/module/presto/bin/launcher start
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br></div></div><ul><li><p>客户端认证访问Presto集群 （可封装脚本）</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>#在/opt/software/presto/   下执行
+./prestocli \
+--server https://node1:7778 \
+--catalog hive \
+--schema default \
+--enable-authentication \
+--krb5-remote-service-name presto \
+--krb5-config-path /etc/krb5.conf \
+--krb5-principal hadoop101@EXAMPLE.COM \
+--krb5-keytab-path /home/hadoop101/hadoop101.keytab \
+--keystore-path /etc/security/keytab/keystore.jks \
+--keystore-password hadoop \
+--user hadoop101
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br></div></div></li></ul> <p>这里出现了异常</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>Query 20211020_093515_00002_9s9zr failed: Access Denied: Principal hadoop101@EXAMPLE.COM cannot become user hadoop101
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div><h3 id="kylin配置"><a href="#kylin配置" class="header-anchor">#</a> Kylin配置</h3> <p><strong>改动说明</strong>：</p> <p>从Kylin的架构，可以看出Kylin充当只是一个Hadoop客户端，读取Hive数据，利用MR或Spark进行计算，将Cube存储至HBase中。所以在安全的Hadoop环境下，Kylin不需要做额外的配置，只需要具备一个Kerberos主体，进行常规的认证即可。</p> <p>但是Kylin所依赖的HBase需要进行额外的配置，才能在安全的Hadoop环境下正常工作。</p> <ul><li><strong>HBase开启Kerberos认证</strong></li> <li><strong>Kylin进行Kerberos认证</strong></li></ul> <h3 id="权限管理"><a href="#权限管理" class="header-anchor">#</a> 权限管理</h3> <p><strong>了解Ranger安装和基本配置</strong></p> <h2 id="元数据管理"><a href="#元数据管理" class="header-anchor">#</a> 元数据管理</h2> <p>可用Altal进行管理，其中采用的集成外部Hbase+Solr，了解可集成组件和方法。</p> <p>可清晰让我们知道每个流程的依赖，方便后续管理。</p> <h2 id="数据质量检测"><a href="#数据质量检测" class="header-anchor">#</a> 数据质量检测</h2> <p>对数仓各个阶段的数据质量，进行识别检测，利用python+shell进行识别，存储入库，然后再用superset报表</p> <p><strong>指标</strong>：</p> <table><thead><tr><th><em><strong>*评价标准*</strong></em></th> <th><em><strong>*描述*</strong></em></th> <th><em><strong>*监控项*</strong></em></th></tr></thead> <tbody><tr><td><em><strong>*唯一性*</strong></em></td> <td>指主键保持唯一</td> <td>字段唯一性检查</td></tr> <tr><td><em><strong>*完整性*</strong></em></td> <td>主要包括记录缺失和字段值缺失等方面</td> <td>字段枚举值检查</td></tr> <tr><td></td> <td></td> <td>字段记录数检查</td></tr> <tr><td></td> <td></td> <td>字段空值检查</td></tr> <tr><td><em><strong>*精确度*</strong></em></td> <td>数据生成的正确性，数据在整个链路流转的正确性</td> <td>波动阀值检查</td></tr> <tr><td><em><strong>*合法性*</strong></em></td> <td>主要包括格式、类型、域值的合法性</td> <td>字段日期格式检查</td></tr> <tr><td></td> <td></td> <td>字段长度检查</td></tr> <tr><td></td> <td></td> <td>字段值域检查</td></tr> <tr><td><em><strong>*时效性*</strong></em></td> <td>主要包括数据处理的时效性</td> <td>批处理是否按时完成</td></tr></tbody></table> <h2 id="🎇导图"><a href="#🎇导图" class="header-anchor">#</a> 🎇导图</h2> <iframe src="https://gitmind.com/app/doc/ba35122260" width="100%" height="800" frameborder="0" scrolling="No" leftmargin="0" topmargin="0"></iframe></div></div> <div class="page-slot page-slot-bottom"><!-- 横向自适应 -->
+      <ins class="adsbygoogle"
+          style="display:block"
+          data-ad-client="ca-pub-7828333725993554"
+          data-ad-slot="6620245489"
+          data-ad-format="auto"
+          data-full-width-responsive="true"></ins>
+      <script>
+          (adsbygoogle = window.adsbygoogle || []).push({});
+      </script></div> <div class="page-edit"><!----> <div class="tags"><a href="/tags/?tag=%E6%95%B0%E4%BB%93" title="标签">#数仓</a></div> <!----></div> <div class="page-nav-wapper"><div class="page-nav-centre-wrap"><a href="/pages/py14highua141on/" class="page-nav-centre page-nav-centre-prev"><div class="tooltip">python数据可视化</div></a> <a href="/pages/2ws2sd2a21ss/" class="page-nav-centre page-nav-centre-next"><div class="tooltip">微实时分析可视化demo</div></a></div> <div class="page-nav"><p class="inner"><span class="prev">
+        ←
+        <a href="/pages/py14highua141on/" class="prev">python数据可视化</a></span> <span class="next"><a href="/pages/2ws2sd2a21ss/">微实时分析可视化demo</a>→
+      </span></p></div></div></div> <div class="article-list"><div class="article-title"><a href="/archives/" class="iconfont icon-bi">最近更新</a></div> <div class="article-wrapper"><dl><dd>01</dd> <dt><a href="/pages/97f14c/"><div>计划计划🐻‍❄️</div></a> <span>01-15</span></dt></dl><dl><dd>02</dd> <dt><a href="/pages/ace0b4/"><div>ClickHouse</div></a> <span>01-11</span></dt></dl><dl><dd>03</dd> <dt><a href="/pages/e0ae76/"><div>Maxwell</div></a> <span>01-11</span></dt></dl> <dl><dd></dd> <dt><a href="/archives/" class="more">更多文章&gt;</a></dt></dl></div></div></main></div> <div class="footer"><div class="icons"><a href="http://wpa.qq.com/msgrd?v=3&amp;uin=2461475139&amp;site=qq&amp;menu=yes" title="发邮件" target="_blank" class="iconfont icon-youjian"></a><a href="https://github.com/axcmsm" title="GitHub" target="_blank" class="iconfont icon-github"></a><a href="https://music.163.com/#/playlist?id=6757658477" title="听音乐" target="_blank" class="iconfont icon-erji"></a></div> 
+  Theme by
+  <a href="https://github.com/xugaoyi/vuepress-theme-vdoing" target="_blank" title="本站主题">Vdoing</a> 
+    | Copyright © 2021-2023
+    <span>axcmsm | 转载注明出处 </span></div> <div class="buttons"><div title="返回顶部" class="button blur go-to-top iconfont icon-fanhuidingbu" style="display:none;"></div> <div title="去评论" class="button blur go-to-comment iconfont icon-pinglun" style="display:none;"></div> <div title="主题模式" class="button blur theme-mode-but iconfont icon-zhuti"><ul class="select-box" style="display:none;"><li class="iconfont icon-zidong">
+          跟随系统
+        </li><li class="iconfont icon-rijianmoshi">
+          浅色模式
+        </li><li class="iconfont icon-yejianmoshi">
+          深色模式
+        </li><li class="iconfont icon-yuedu">
+          阅读模式
+        </li></ul></div></div> <div class="body-bg" style="background:url() center center / cover no-repeat;opacity:0.5;"></div> <!----> <div class="custom-html-window custom-html-window-rb" style="display:;"><div class="custom-wrapper"><i class="close-but">×</i> <div><!-- 固定160*160px -->
+      <ins class="adsbygoogle"
+          style="display:inline-block;max-width:160px;max-height:160px"
+          data-ad-client="ca-pub-7828333725993554"
+          data-ad-slot="8377369658"></ins>
+      <script>
+          (adsbygoogle = window.adsbygoogle || []).push({});
+      </script>
+      </div></div></div></div><div class="global-ui"><div></div></div></div>
+    <script src="/assets/js/app.54c20740.js" defer></script><script src="/assets/js/2.125ae6e8.js" defer></script><script src="/assets/js/51.46e4d352.js" defer></script>
+  </body>
+</html>

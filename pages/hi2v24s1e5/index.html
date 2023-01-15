@@ -1,0 +1,515 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>hive安装部署 | 🦏</title>
+    <meta name="generator" content="VuePress 1.8.0">
+    <link rel="icon" href="/img/favicon.ico">
+    <meta name="description" content="web前端技术博客,简洁至上,专注web前端学习与总结。JavaScript,js,ES6,TypeScript,vue,python,css3,html5,Node,git,github等技术文章。">
+    <meta name="keywords" content="个人技术博客,后端,大数据,技术文档,学习,js,vue,python,css3,java,javaEE,SpringBoot,Spring,Hadoop,html5,git,github,markdown">
+    <meta name="theme-color" content="#11a8cd">
+    <link rel="preload" href="/assets/css/0.styles.546f0649.css" as="style"><link rel="preload" href="/assets/js/app.54c20740.js" as="script"><link rel="preload" href="/assets/js/2.125ae6e8.js" as="script"><link rel="preload" href="/assets/js/26.a991ea92.js" as="script"><link rel="prefetch" href="/assets/js/10.95c2d7b0.js"><link rel="prefetch" href="/assets/js/100.22bef1db.js"><link rel="prefetch" href="/assets/js/101.95bf0d45.js"><link rel="prefetch" href="/assets/js/102.f2573571.js"><link rel="prefetch" href="/assets/js/103.7f32d4d1.js"><link rel="prefetch" href="/assets/js/104.8952a14d.js"><link rel="prefetch" href="/assets/js/105.a7056d6f.js"><link rel="prefetch" href="/assets/js/106.fdc0e0c0.js"><link rel="prefetch" href="/assets/js/107.87869a32.js"><link rel="prefetch" href="/assets/js/108.b69443ee.js"><link rel="prefetch" href="/assets/js/109.1dc036f2.js"><link rel="prefetch" href="/assets/js/11.5682c637.js"><link rel="prefetch" href="/assets/js/110.45d48e62.js"><link rel="prefetch" href="/assets/js/111.5fe20274.js"><link rel="prefetch" href="/assets/js/112.f0216b9a.js"><link rel="prefetch" href="/assets/js/113.51044044.js"><link rel="prefetch" href="/assets/js/114.202226f6.js"><link rel="prefetch" href="/assets/js/115.daf536ca.js"><link rel="prefetch" href="/assets/js/116.73d14456.js"><link rel="prefetch" href="/assets/js/117.62614815.js"><link rel="prefetch" href="/assets/js/118.b3fe318a.js"><link rel="prefetch" href="/assets/js/119.ec9a1489.js"><link rel="prefetch" href="/assets/js/12.5a51d307.js"><link rel="prefetch" href="/assets/js/120.f189350d.js"><link rel="prefetch" href="/assets/js/121.0701b3e4.js"><link rel="prefetch" href="/assets/js/122.2b947072.js"><link rel="prefetch" href="/assets/js/13.7cfaa6fe.js"><link rel="prefetch" href="/assets/js/14.32085acd.js"><link rel="prefetch" href="/assets/js/15.9920adfb.js"><link rel="prefetch" href="/assets/js/16.7101d872.js"><link rel="prefetch" href="/assets/js/17.c731932d.js"><link rel="prefetch" href="/assets/js/18.fb18dcc3.js"><link rel="prefetch" href="/assets/js/19.94f67b91.js"><link rel="prefetch" href="/assets/js/20.b62f0e5d.js"><link rel="prefetch" href="/assets/js/21.fe016662.js"><link rel="prefetch" href="/assets/js/22.23fb3863.js"><link rel="prefetch" href="/assets/js/23.df829d61.js"><link rel="prefetch" href="/assets/js/24.dbfcb2d0.js"><link rel="prefetch" href="/assets/js/25.9c5401b3.js"><link rel="prefetch" href="/assets/js/27.703b981f.js"><link rel="prefetch" href="/assets/js/28.6b84abe6.js"><link rel="prefetch" href="/assets/js/29.371a35c5.js"><link rel="prefetch" href="/assets/js/3.fa9e7b6d.js"><link rel="prefetch" href="/assets/js/30.0e959ae4.js"><link rel="prefetch" href="/assets/js/31.2abbdb83.js"><link rel="prefetch" href="/assets/js/32.8cf6cae8.js"><link rel="prefetch" href="/assets/js/33.f53fe74a.js"><link rel="prefetch" href="/assets/js/34.dfc89fa6.js"><link rel="prefetch" href="/assets/js/35.e96066e5.js"><link rel="prefetch" href="/assets/js/36.e0d50b6b.js"><link rel="prefetch" href="/assets/js/37.20cc7658.js"><link rel="prefetch" href="/assets/js/38.300b0f3e.js"><link rel="prefetch" href="/assets/js/39.09b80835.js"><link rel="prefetch" href="/assets/js/4.4a137b18.js"><link rel="prefetch" href="/assets/js/40.2fc7d5f7.js"><link rel="prefetch" href="/assets/js/41.75353f59.js"><link rel="prefetch" href="/assets/js/42.f4d93aa6.js"><link rel="prefetch" href="/assets/js/43.9226d384.js"><link rel="prefetch" href="/assets/js/44.01bb314d.js"><link rel="prefetch" href="/assets/js/45.454ee3ae.js"><link rel="prefetch" href="/assets/js/46.d2dd08cd.js"><link rel="prefetch" href="/assets/js/47.9d5d7a91.js"><link rel="prefetch" href="/assets/js/48.7c8df7cc.js"><link rel="prefetch" href="/assets/js/49.5ecfacf6.js"><link rel="prefetch" href="/assets/js/5.51ca929a.js"><link rel="prefetch" href="/assets/js/50.be294fe7.js"><link rel="prefetch" href="/assets/js/51.46e4d352.js"><link rel="prefetch" href="/assets/js/52.5e575a6f.js"><link rel="prefetch" href="/assets/js/53.8bf3ba5f.js"><link rel="prefetch" href="/assets/js/54.481fc903.js"><link rel="prefetch" href="/assets/js/55.41ad3f5d.js"><link rel="prefetch" href="/assets/js/56.97ff3ffd.js"><link rel="prefetch" href="/assets/js/57.56845d08.js"><link rel="prefetch" href="/assets/js/58.1865eac5.js"><link rel="prefetch" href="/assets/js/59.b9b7a46e.js"><link rel="prefetch" href="/assets/js/6.1eaa1376.js"><link rel="prefetch" href="/assets/js/60.e596d87e.js"><link rel="prefetch" href="/assets/js/61.ccc81623.js"><link rel="prefetch" href="/assets/js/62.c263b15a.js"><link rel="prefetch" href="/assets/js/63.06832aeb.js"><link rel="prefetch" href="/assets/js/64.8d09c614.js"><link rel="prefetch" href="/assets/js/65.8fdc58dd.js"><link rel="prefetch" href="/assets/js/66.2f7b1a19.js"><link rel="prefetch" href="/assets/js/67.b2e1da2f.js"><link rel="prefetch" href="/assets/js/68.8cb80f6a.js"><link rel="prefetch" href="/assets/js/69.87f24303.js"><link rel="prefetch" href="/assets/js/7.1096b6fa.js"><link rel="prefetch" href="/assets/js/70.7d332a1a.js"><link rel="prefetch" href="/assets/js/71.18f26409.js"><link rel="prefetch" href="/assets/js/72.2c6923d8.js"><link rel="prefetch" href="/assets/js/73.7a4495cb.js"><link rel="prefetch" href="/assets/js/74.3ad58791.js"><link rel="prefetch" href="/assets/js/75.d985e2a8.js"><link rel="prefetch" href="/assets/js/76.ed21e9d5.js"><link rel="prefetch" href="/assets/js/77.7bb71304.js"><link rel="prefetch" href="/assets/js/78.53781f01.js"><link rel="prefetch" href="/assets/js/79.1b5a4f17.js"><link rel="prefetch" href="/assets/js/8.c7bc2101.js"><link rel="prefetch" href="/assets/js/80.5a3a5c75.js"><link rel="prefetch" href="/assets/js/81.c8e9b4ba.js"><link rel="prefetch" href="/assets/js/82.da3ddabe.js"><link rel="prefetch" href="/assets/js/83.4446b251.js"><link rel="prefetch" href="/assets/js/84.812b630b.js"><link rel="prefetch" href="/assets/js/85.3f6cf67c.js"><link rel="prefetch" href="/assets/js/86.df8c0734.js"><link rel="prefetch" href="/assets/js/87.db2d840c.js"><link rel="prefetch" href="/assets/js/88.ed0658da.js"><link rel="prefetch" href="/assets/js/89.58d49aa6.js"><link rel="prefetch" href="/assets/js/9.6f6f6044.js"><link rel="prefetch" href="/assets/js/90.fd3f1e22.js"><link rel="prefetch" href="/assets/js/91.86ad199e.js"><link rel="prefetch" href="/assets/js/92.becc4500.js"><link rel="prefetch" href="/assets/js/93.5dc0a770.js"><link rel="prefetch" href="/assets/js/94.33a101f7.js"><link rel="prefetch" href="/assets/js/95.7cc4c897.js"><link rel="prefetch" href="/assets/js/96.05da9357.js"><link rel="prefetch" href="/assets/js/97.4dc907b9.js"><link rel="prefetch" href="/assets/js/98.bcd4b95f.js"><link rel="prefetch" href="/assets/js/99.0c290d2f.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.546f0649.css">
+  </head>
+  <body class="theme-mode-light">
+    <div id="app" data-server-rendered="true"><div class="theme-container sidebar-open have-rightmenu have-body-img"><header class="navbar blur"><div title="目录" class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><img src="/img/favicon.ico" alt="🦏" class="logo"> <span class="site-name can-hide">🦏</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/" class="nav-link">首页</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Big数据" class="dropdown-title"><a href="/BigData/" class="link-title">Big数据</a> <span class="title" style="display:none;">Big数据</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>大数据路线</h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/pages/2asd1/" class="nav-link">开发路线</a></li><li class="dropdown-subitem"><a href="/pages/5cda13/" class="nav-link">linux导图</a></li></ul></li><li class="dropdown-item"><h4>学习笔记</h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/pages/l2sdd2ad123/" class="nav-link">《Linux》</a></li><li class="dropdown-subitem"><a href="/pages/hdf2shad2o4p3/" class="nav-link">《Hadoop》</a></li><li class="dropdown-subitem"><a href="/pages/f2l2im24e/" class="nav-link">《生态圈组件》</a></li><li class="dropdown-subitem"><a href="/pages/ka1f3k4a/" class="nav-link">《消息队列》</a></li><li class="dropdown-subitem"><a href="/pages/spa123ra12sd2/" class="nav-link">《spark》</a></li><li class="dropdown-subitem"><a href="/pages/f1l2i3n4k5/" class="nav-link">《flink》</a></li></ul></li></ul></div></div><div class="nav-item"><a href="/TechnologyStack/" class="nav-link">技术栈🎈</a></div><div class="nav-item"><a href="/python/" class="nav-link">python</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="⛳🖥" class="dropdown-title"><a href="/technology/" class="link-title">⛳🖥</a> <span class="title" style="display:none;">⛳🖥</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/pages/b08e81/" class="nav-link">计算机必备</a></li><li class="dropdown-item"><!----> <a href="/pages/fba33e/" class="nav-link">数学基础</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="more" class="dropdown-title"><a href="/more/" class="link-title">more</a> <span class="title" style="display:none;">more</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/pages/f2a556/" class="nav-link">学习</a></li><li class="dropdown-item"><!----> <a href="/pages/vscode123/" class="nav-link">技巧</a></li><li class="dropdown-item"><!----> <a href="/pages/4c76s2s6d8b3/" class="nav-link">技术文档</a></li><li class="dropdown-item"><!----> <a href="/pages/4c778760be26d8b3/" class="nav-link">GitHub技巧</a></li><li class="dropdown-item"><!----> <a href="/friends/" class="nav-link">友情链接</a></li></ul></div></div><div class="nav-item"><a href="/about/" class="nav-link">关于</a></div><div class="nav-item"><a href="/pages/beb6c0bd8a66cea6/" class="nav-link">收藏</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="索引" class="dropdown-title"><a href="/archives/" class="link-title">索引</a> <span class="title" style="display:none;">索引</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/categories/" class="nav-link">分类</a></li><li class="dropdown-item"><!----> <a href="/tags/" class="nav-link">标签</a></li><li class="dropdown-item"><!----> <a href="/archives/" class="nav-link">归档</a></li></ul></div></div><div class="nav-item"><a href="https://github.com/axcmsm" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Github
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar" style="display:none;"><div class="blogger"><img src="/img/zzx.jpg"> <div class="blogger-info"><h3>Axcmsm🐼</h3> <span>纵有疾风起，人生不言弃🐅</span></div></div> <nav class="nav-links"><div class="nav-item"><a href="/" class="nav-link">首页</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Big数据" class="dropdown-title"><a href="/BigData/" class="link-title">Big数据</a> <span class="title" style="display:none;">Big数据</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>大数据路线</h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/pages/2asd1/" class="nav-link">开发路线</a></li><li class="dropdown-subitem"><a href="/pages/5cda13/" class="nav-link">linux导图</a></li></ul></li><li class="dropdown-item"><h4>学习笔记</h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/pages/l2sdd2ad123/" class="nav-link">《Linux》</a></li><li class="dropdown-subitem"><a href="/pages/hdf2shad2o4p3/" class="nav-link">《Hadoop》</a></li><li class="dropdown-subitem"><a href="/pages/f2l2im24e/" class="nav-link">《生态圈组件》</a></li><li class="dropdown-subitem"><a href="/pages/ka1f3k4a/" class="nav-link">《消息队列》</a></li><li class="dropdown-subitem"><a href="/pages/spa123ra12sd2/" class="nav-link">《spark》</a></li><li class="dropdown-subitem"><a href="/pages/f1l2i3n4k5/" class="nav-link">《flink》</a></li></ul></li></ul></div></div><div class="nav-item"><a href="/TechnologyStack/" class="nav-link">技术栈🎈</a></div><div class="nav-item"><a href="/python/" class="nav-link">python</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="⛳🖥" class="dropdown-title"><a href="/technology/" class="link-title">⛳🖥</a> <span class="title" style="display:none;">⛳🖥</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/pages/b08e81/" class="nav-link">计算机必备</a></li><li class="dropdown-item"><!----> <a href="/pages/fba33e/" class="nav-link">数学基础</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="more" class="dropdown-title"><a href="/more/" class="link-title">more</a> <span class="title" style="display:none;">more</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/pages/f2a556/" class="nav-link">学习</a></li><li class="dropdown-item"><!----> <a href="/pages/vscode123/" class="nav-link">技巧</a></li><li class="dropdown-item"><!----> <a href="/pages/4c76s2s6d8b3/" class="nav-link">技术文档</a></li><li class="dropdown-item"><!----> <a href="/pages/4c778760be26d8b3/" class="nav-link">GitHub技巧</a></li><li class="dropdown-item"><!----> <a href="/friends/" class="nav-link">友情链接</a></li></ul></div></div><div class="nav-item"><a href="/about/" class="nav-link">关于</a></div><div class="nav-item"><a href="/pages/beb6c0bd8a66cea6/" class="nav-link">收藏</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="索引" class="dropdown-title"><a href="/archives/" class="link-title">索引</a> <span class="title" style="display:none;">索引</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/categories/" class="nav-link">分类</a></li><li class="dropdown-item"><!----> <a href="/tags/" class="nav-link">标签</a></li><li class="dropdown-item"><!----> <a href="/archives/" class="nav-link">归档</a></li></ul></div></div><div class="nav-item"><a href="https://github.com/axcmsm" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Github
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div> <!----></nav>  <ul class="sidebar-links"><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>路线or导图</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading open"><span>学习笔记</span> <span class="arrow down"></span></p> <ul class="sidebar-links sidebar-group-items"><li><section class="sidebar-group collapsable is-sub-group depth-1"><p class="sidebar-heading"><span>《linux》</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable is-sub-group depth-1"><p class="sidebar-heading"><span>《Hadoop》</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable is-sub-group depth-1"><p class="sidebar-heading"><span>《zookeeper》</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable is-sub-group depth-1"><p class="sidebar-heading open"><span>《hive》</span> <span class="arrow down"></span></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/pages/hi2v24s1e5/" aria-current="page" class="active sidebar-link">hive安装部署</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/pages/hi2v24s1e5/#数仓基础" class="sidebar-link">数仓基础</a></li><li class="sidebar-sub-header"><a href="/pages/hi2v24s1e5/#hive概述" class="sidebar-link">Hive概述</a></li><li class="sidebar-sub-header"><a href="/pages/hi2v24s1e5/#⛳hive安装部署" class="sidebar-link">⛳Hive安装部署</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/pages/hi2v24s1e5/#远程模式部署" class="sidebar-link">远程模式部署：</a></li></ul></li><li class="sidebar-sub-header"><a href="/pages/hi2v24s1e5/#客户端使用" class="sidebar-link">客户端使用</a></li></ul></li><li><a href="/pages/hi25v15e1/" class="sidebar-link">hive使用</a></li></ul></section></li><li><section class="sidebar-group collapsable is-sub-group depth-1"><p class="sidebar-heading"><span>《生态圈组件》</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable is-sub-group depth-1"><p class="sidebar-heading"><span>《消息队列》</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable is-sub-group depth-1"><p class="sidebar-heading"><span>《spark》</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable is-sub-group depth-1"><p class="sidebar-heading"><span>《flink》</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable is-sub-group depth-1"><p class="sidebar-heading"><span>《数据可视化》</span> <span class="arrow right"></span></p> <!----></section></li></ul></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>项目</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>安装</span> <span class="arrow right"></span></p> <!----></section></li></ul> <div class="sidebar-slot sidebar-slot-bottom"><!-- 正方形 -->
+      <ins class="adsbygoogle"
+          style="display:block"
+          data-ad-client="ca-pub-7828333725993554"
+          data-ad-slot="3508773082"
+          data-ad-format="auto"
+          data-full-width-responsive="true"></ins>
+      <script>
+          (adsbygoogle = window.adsbygoogle || []).push({});
+      </script></div></aside> <div><main class="page"><div class="theme-vdoing-wrapper "><div class="articleInfo-wrap" data-v-1cd794fe><div class="articleInfo" data-v-1cd794fe><ul class="breadcrumbs" data-v-1cd794fe><li data-v-1cd794fe><a href="/" title="首页" class="iconfont icon-home router-link-active" data-v-1cd794fe></a></li> <li data-v-1cd794fe><a href="/BigData" title="大数据-目录页" data-v-1cd794fe>大数据</a></li> <li data-v-1cd794fe><a href="/BigData/#学习笔记" title="大数据#学习笔记" data-v-1cd794fe>学习笔记</a></li> <li data-v-1cd794fe><a href="/BigData/#《hive》" title="大数据#《hive》" data-v-1cd794fe>《hive》</a></li></ul> <div class="info" data-v-1cd794fe><div title="作者" class="author iconfont icon-touxiang" data-v-1cd794fe><a href="https://github.com/axcmsm" target="_blank" title="作者" class="beLink" data-v-1cd794fe>Wei Ye</a></div> <div title="创建时间" class="date iconfont icon-riqi" data-v-1cd794fe><a href="javascript:;" data-v-1cd794fe>2021-09-03</a></div> <!----></div></div></div> <!----> <div class="content-wrapper"><div class="right-menu-wrapper"><div class="right-menu-margin"><div class="right-menu-content"></div></div></div> <h1><img src="/img/bj3.jpg">
+          hive安装部署
+        </h1> <div class="page-slot page-slot-top"><!-- 固定100% * 90px可显示，max-height:90px未见显示-->
+     <ins class="adsbygoogle"
+          style="display:inline-block;width:100%;max-height:90px"
+          data-ad-client="ca-pub-7828333725993554"
+          data-ad-slot="6625304284"></ins>
+      <script>
+          (adsbygoogle = window.adsbygoogle || []).push({});
+      </script></div> <div class="theme-vdoing-content content__default"><h2 id="数仓基础"><a href="#数仓基础" class="header-anchor">#</a> 数仓基础</h2> <p><strong>概述</strong>:数据仓库（英语：Data Warehouse，简称数仓、DW）,是一个用于<strong>存储</strong>、<strong>分析</strong>、<strong>报告</strong>的数据系统。</p> <p>联机事务处理 OLTP（例：关系型数据库系统RDBMS），联机分析处理 OLAP,而数据仓库是OLAP一种.</p> <p><strong>对比</strong>:</p> <table><thead><tr><th></th> <th><strong>OLTP</strong></th> <th><strong>OLAP</strong></th></tr></thead> <tbody><tr><td><strong>数据源</strong></td> <td>仅包含当前运行日常业务数据</td> <td>整合来自多个来源的数据，包括OLTP和外部来源</td></tr> <tr><td><strong>目的</strong></td> <td>面向应用，面向业务，支撑事务</td> <td>面向主题，面向分析，支撑分析决策</td></tr> <tr><td><strong>焦点</strong></td> <td>当下</td> <td>主要面向过去、面向历史 实时数仓除外</td></tr> <tr><td><strong>任务</strong></td> <td>读写操作</td> <td>大量读而很少写操作</td></tr> <tr><td><strong>响应时间</strong></td> <td>毫秒</td> <td>秒、分钟、小时或者天取决于数据量和查询复杂性</td></tr> <tr><td><strong>数据量</strong></td> <td>小数据，MB,GB</td> <td>大数据，TP，PB</td></tr></tbody></table> <p><strong>数仓主要特征</strong>：</p> <ul><li>面向主题</li> <li>集成性</li> <li>非易变性</li> <li>时变性</li></ul> <p><strong>分层架构</strong>：操作型数据层（ODS）、数据仓库层(DW)和数据应用层(DA)。</p> <p><img src="https://gitee.com/axcmsm/tmp/raw/master/bigdata/20210911163601.png" alt=""></p> <p><strong>ETL and ELT</strong>:</p> <p>数据仓库从各数据源获取数据及在数据仓库内的数据转换和流动都可以认为是ETL（抽取Extra, 转化Transfer, 装载Load）的过程。而ELT是把位置转换了 直接装载到我们hdfs然后再进行转换。</p> <h2 id="hive概述"><a href="#hive概述" class="header-anchor">#</a> Hive概述</h2> <p><img src="https://gitee.com/axcmsm/tmp/raw/master/bigdata/20210911163956.png" alt=""></p> <p>Hive：由 Facebook 开源用于解决海量结构化日志的数据统计工具。Hive 是基于 Hadoop 的一个数据仓库工具，可以将结构化的数据文件映射为一张表，并提供类 SQL 查询功能。</p> <p><strong>本质</strong>:将HQL转换为MapReduce程序运行</p> <ul><li>Hive 处理的数据存储在 HDFS</li> <li>Hive 分析数据底层的实现是 MapReduce</li> <li>执行程序运行在 Yarn 上</li></ul> <p><strong>架构</strong>：</p> <p><img src="https://gitee.com/axcmsm/tmp/raw/master/bigdata/20210911165025.png" alt=""></p> <ol><li><strong>用户接口：Client</strong>：<code>CLI、JDBC/ODBC、WebGUI</code></li> <li><strong>元数据：Metastore</strong> : 存储映射信息 ，存储关系型数据库中<strong>mysql</strong>/derby中</li> <li><strong>执行引擎</strong>：<code>MapReduce、Tez、Spark</code>3种执行引擎</li> <li><strong>驱动器：Driver</strong>：解析器、计划编译器、优化器、执行器</li></ol> <p><strong>数据存储路径</strong>：</p> <blockquote><p>在<code>hive-site.xml</code>中，由参数<code>hive.metastore.warehouse.dir</code>指定。默认值为/user/hive/warehouse。</p></blockquote> <p>其中表还有<strong>分区</strong>(一个文件代表一个）<strong>分桶</strong>（文件划分成指定的若干个小文件）的概念。</p> <p><strong>元数据</strong>：Metastore服务的作用是管理metadata元数据</p> <p>metastore服务配置有3种模式：<strong>内嵌模式</strong>、<strong>本地模式</strong>、<strong>远程模式</strong>。一般企业都是使用远程模式部署</p> <p><strong>内嵌模式</strong>：内置的Derby数据库（默认）</p> <p><strong>本地模式</strong>：Metastore服务与主HiveServer进程在同一进程中运行</p> <p><strong>远程模式</strong>：Metastore服务在其自己的单独JVM上运行，需要配置hive.metastore.uris 参数来指定metastore服务运行的机器ip和端口，并且需要单独手动启动metastore服务。（mysql存储）</p> <h2 id="⛳hive安装部署"><a href="#⛳hive安装部署" class="header-anchor">#</a> ⛳Hive安装部署</h2> <p><a href="http://hive.apache.org/" target="_blank" rel="noopener noreferrer">官网地址<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a> <a href="https://cwiki.apache.org/confluence/display/Hive/GettingStarted" target="_blank" rel="noopener noreferrer">官方文档<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a> <a href="http://archive.apache.org/dist/hive/" target="_blank" rel="noopener noreferrer">下载地址<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a> <a href="https://github.com/apache/hive" target="_blank" rel="noopener noreferrer">github地址<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></p> <p><strong>基础环境</strong>：集群时间同步、防火墙关闭、主机Host映射、免密登录、JDK安装</p> <p><strong>Hadoop集群健康可用</strong>：启动Hive之前必须先启动Hadoop集群。特别要注意，需等待HDFS安全模式关闭之后再启动运行Hive。</p> <p><strong>Hadoop与Hive整合</strong>：</p> <p><code>core-site.xml</code>添加 (这里是代理用户root，相当于在远程idea连接的用户)</p> <div class="language-xml line-numbers-mode"><pre class="language-xml"><code><span class="token comment">&lt;!-- 整合hive --&gt;</span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>property</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>name</span><span class="token punctuation">&gt;</span></span>hadoop.proxyuser.root.hosts<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>name</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>value</span><span class="token punctuation">&gt;</span></span>*<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>value</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>property</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>property</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>name</span><span class="token punctuation">&gt;</span></span>hadoop.proxyuser.root.groups<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>name</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>value</span><span class="token punctuation">&gt;</span></span>*<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>value</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>property</span><span class="token punctuation">&gt;</span></span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br></div></div><h3 id="远程模式部署"><a href="#远程模式部署" class="header-anchor">#</a> <strong>远程模式部署</strong>：</h3> <div class="language-xml line-numbers-mode"><pre class="language-xml"><code>#-------------Mysql安装----------------------
+
+#卸载Centos7自带mariadb
+rpm -qa|grep mariadb mariadb-libs-5.5.64-1.el7.x86_64
+rpm -e mariadb-libs-5.5.64-1.el7.x86_64 --nodeps
+
+#创建mysql安装包存放点
+mkdir /export/software/mysql
+#上传mysql-5.7.29安装包到上述文件夹下、解压
+tar xvf mysql-5.7.29-1.el7.x86_64.rpm-bundle.tar
+
+#执行安装
+yum -y install libaio
+rpm -ivh mysql-community-common-5.7.29-1.el7.x86_64.rpm mysql-community-libs-5.7.29-1.el7.x86_64.rpm mysql-community-client-5.7.29-1.el7.x86_64.rpm mysql-community-server-5.7.29-1.el7.x86_64.rpm
+
+#初始化mysql
+mysqld --initialize
+#更改所属组
+chown mysql:mysql /var/lib/mysql -R
+
+#启动mysql
+systemctl start mysqld.service
+#查看生成的临时root密码
+cat /var/log/mysqld.log |grep root@localhost
+#这行日志的最后就是随机生成的临时密码
+[Note] A temporary password is generated for root@localhost: o+TU+KDOm004
+
+#修改mysql root密码、授权远程访问
+mysql -u root -p
+Enter password:     #这里输入在日志中生成的临时密码
+
+#更新root密码  设置为hadoop
+mysql&gt; alter user user() identified by &quot;hadoop&quot;;
+Query OK, 0 rows affected (0.00 sec)
+#授权
+mysql&gt; use mysql;
+mysql&gt; GRANT ALL PRIVILEGES ON *.* TO 'root'@'%' IDENTIFIED BY 'hadoop' WITH GRANT OPTION;
+mysql&gt; FLUSH PRIVILEGES;
+
+#mysql的启动和关闭 状态查看
+sudo systemctl stop mysqld
+sudo systemctl status mysqld
+sudo systemctl start mysqld
+
+#建议设置为开机自启动服务
+sudo systemctl enable  mysqld
+
+#查看是否已经设置自启动成功
+systemctl list-unit-files | grep mysqld
+
+
+#--------------------Hive安装配置----------------------
+# 上传解压安装包
+cd /export/server/
+tar zxvf apache-hive-3.1.2-bin.tar.gz
+mv apache-hive-3.1.2-bin hive
+
+#解决hadoop、hive之间guava版本差异
+cd /export/server/hive
+rm -rf lib/guava-19.0.jar
+cp /export/server/hadoop-3.1.4/share/hadoop/common/lib/guava-27.0-jre.jar ./lib/
+
+#添加mysql jdbc驱动到hive安装包lib/文件下
+mysql-connector-java-5.1.32.jar
+
+#修改hive环境变量文件 添加Hadoop_HOME
+cd /export/server/hive/conf/
+mv hive-env.sh.template hive-env.sh
+vim hive-env.sh
+export HADOOP_HOME=/export/server/hadoop-3.1.4
+export HIVE_CONF_DIR=/export/server/hive/conf
+export HIVE_AUX_JARS_PATH=/export/server/hive/lib
+
+#新增hive-site.xml 配置mysql等相关信息
+vim hive-site.xml
+
+
+#初始化metadata
+cd /export/server/hive
+bin/schematool -initSchema -dbType mysql -verbos
+#初始化成功会在mysql中创建74张表 注意查看表是否生成 不行再初始化一次
+
+
+#-----------------hive-site.xml--------------
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>configuration</span><span class="token punctuation">&gt;</span></span>
+    <span class="token comment">&lt;!-- 存储元数据mysql相关配置 --&gt;</span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>property</span><span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>name</span><span class="token punctuation">&gt;</span></span>javax.jdo.option.ConnectionURL<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>name</span><span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>value</span><span class="token punctuation">&gt;</span></span> jdbc:mysql://node1:3306/hive?createDatabaseIfNotExist=true<span class="token entity named-entity" title="&amp;">&amp;amp;</span>useSSL=false<span class="token entity named-entity" title="&amp;">&amp;amp;</span>useUnicode=true<span class="token entity named-entity" title="&amp;">&amp;amp;</span>characterEncoding=UTF-8<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>value</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>property</span><span class="token punctuation">&gt;</span></span>
+
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>property</span><span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>name</span><span class="token punctuation">&gt;</span></span>javax.jdo.option.ConnectionDriverName<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>name</span><span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>value</span><span class="token punctuation">&gt;</span></span>com.mysql.jdbc.Driver<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>value</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>property</span><span class="token punctuation">&gt;</span></span>
+
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>property</span><span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>name</span><span class="token punctuation">&gt;</span></span>javax.jdo.option.ConnectionUserName<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>name</span><span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>value</span><span class="token punctuation">&gt;</span></span>root<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>value</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>property</span><span class="token punctuation">&gt;</span></span>
+
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>property</span><span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>name</span><span class="token punctuation">&gt;</span></span>javax.jdo.option.ConnectionPassword<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>name</span><span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>value</span><span class="token punctuation">&gt;</span></span>hadoop<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>value</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>property</span><span class="token punctuation">&gt;</span></span>
+<span class="token comment">&lt;!-- 指定 hiveserver2 连接的端口号 --&gt;</span>
+ <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>property</span><span class="token punctuation">&gt;</span></span>
+ <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>name</span><span class="token punctuation">&gt;</span></span>hive.server2.thrift.port<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>name</span><span class="token punctuation">&gt;</span></span>
+ <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>value</span><span class="token punctuation">&gt;</span></span>10000<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>value</span><span class="token punctuation">&gt;</span></span>
+ <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>property</span><span class="token punctuation">&gt;</span></span>
+    <span class="token comment">&lt;!-- H2S运行绑定host --&gt;</span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>property</span><span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>name</span><span class="token punctuation">&gt;</span></span>hive.server2.thrift.bind.host<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>name</span><span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>value</span><span class="token punctuation">&gt;</span></span>node1<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>value</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>property</span><span class="token punctuation">&gt;</span></span>
+
+    <span class="token comment">&lt;!-- 远程模式部署metastore 服务地址 --&gt;</span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>property</span><span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>name</span><span class="token punctuation">&gt;</span></span>hive.metastore.uris<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>name</span><span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>value</span><span class="token punctuation">&gt;</span></span>thrift://node1:9083<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>value</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>property</span><span class="token punctuation">&gt;</span></span>
+
+    <span class="token comment">&lt;!-- 关闭元数据存储授权  --&gt;</span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>property</span><span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>name</span><span class="token punctuation">&gt;</span></span>hive.metastore.event.db.notification.api.auth<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>name</span><span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>value</span><span class="token punctuation">&gt;</span></span>false<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>value</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>property</span><span class="token punctuation">&gt;</span></span>
+
+    <span class="token comment">&lt;!-- 关闭元数据存储版本的验证 --&gt;</span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>property</span><span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>name</span><span class="token punctuation">&gt;</span></span>hive.metastore.schema.verification<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>name</span><span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>value</span><span class="token punctuation">&gt;</span></span>false<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>value</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>property</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>configuration</span><span class="token punctuation">&gt;</span></span>
+
+
+
+#-----------------Metastore Hiveserver2启动----
+#前台启动  关闭ctrl+c
+/export/server/hive/bin/hive --service metastore
+
+#后台启动 进程挂起  关闭使用jps + kill
+#输入命令回车执行 再次回车 进程将挂起后台
+nohup /export/server/hive/bin/hive --service metastore &amp;
+
+#前台启动开启debug日志
+/export/server/hive/bin/hive --service metastore --hiveconf hive.root.logger=DEBUG,console
+
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br><span class="line-number">31</span><br><span class="line-number">32</span><br><span class="line-number">33</span><br><span class="line-number">34</span><br><span class="line-number">35</span><br><span class="line-number">36</span><br><span class="line-number">37</span><br><span class="line-number">38</span><br><span class="line-number">39</span><br><span class="line-number">40</span><br><span class="line-number">41</span><br><span class="line-number">42</span><br><span class="line-number">43</span><br><span class="line-number">44</span><br><span class="line-number">45</span><br><span class="line-number">46</span><br><span class="line-number">47</span><br><span class="line-number">48</span><br><span class="line-number">49</span><br><span class="line-number">50</span><br><span class="line-number">51</span><br><span class="line-number">52</span><br><span class="line-number">53</span><br><span class="line-number">54</span><br><span class="line-number">55</span><br><span class="line-number">56</span><br><span class="line-number">57</span><br><span class="line-number">58</span><br><span class="line-number">59</span><br><span class="line-number">60</span><br><span class="line-number">61</span><br><span class="line-number">62</span><br><span class="line-number">63</span><br><span class="line-number">64</span><br><span class="line-number">65</span><br><span class="line-number">66</span><br><span class="line-number">67</span><br><span class="line-number">68</span><br><span class="line-number">69</span><br><span class="line-number">70</span><br><span class="line-number">71</span><br><span class="line-number">72</span><br><span class="line-number">73</span><br><span class="line-number">74</span><br><span class="line-number">75</span><br><span class="line-number">76</span><br><span class="line-number">77</span><br><span class="line-number">78</span><br><span class="line-number">79</span><br><span class="line-number">80</span><br><span class="line-number">81</span><br><span class="line-number">82</span><br><span class="line-number">83</span><br><span class="line-number">84</span><br><span class="line-number">85</span><br><span class="line-number">86</span><br><span class="line-number">87</span><br><span class="line-number">88</span><br><span class="line-number">89</span><br><span class="line-number">90</span><br><span class="line-number">91</span><br><span class="line-number">92</span><br><span class="line-number">93</span><br><span class="line-number">94</span><br><span class="line-number">95</span><br><span class="line-number">96</span><br><span class="line-number">97</span><br><span class="line-number">98</span><br><span class="line-number">99</span><br><span class="line-number">100</span><br><span class="line-number">101</span><br><span class="line-number">102</span><br><span class="line-number">103</span><br><span class="line-number">104</span><br><span class="line-number">105</span><br><span class="line-number">106</span><br><span class="line-number">107</span><br><span class="line-number">108</span><br><span class="line-number">109</span><br><span class="line-number">110</span><br><span class="line-number">111</span><br><span class="line-number">112</span><br><span class="line-number">113</span><br><span class="line-number">114</span><br><span class="line-number">115</span><br><span class="line-number">116</span><br><span class="line-number">117</span><br><span class="line-number">118</span><br><span class="line-number">119</span><br><span class="line-number">120</span><br><span class="line-number">121</span><br><span class="line-number">122</span><br><span class="line-number">123</span><br><span class="line-number">124</span><br><span class="line-number">125</span><br><span class="line-number">126</span><br><span class="line-number">127</span><br><span class="line-number">128</span><br><span class="line-number">129</span><br><span class="line-number">130</span><br><span class="line-number">131</span><br><span class="line-number">132</span><br><span class="line-number">133</span><br><span class="line-number">134</span><br><span class="line-number">135</span><br><span class="line-number">136</span><br><span class="line-number">137</span><br><span class="line-number">138</span><br><span class="line-number">139</span><br><span class="line-number">140</span><br><span class="line-number">141</span><br><span class="line-number">142</span><br><span class="line-number">143</span><br><span class="line-number">144</span><br><span class="line-number">145</span><br><span class="line-number">146</span><br><span class="line-number">147</span><br><span class="line-number">148</span><br></div></div><p><strong>编写启动脚本</strong>：（</p> <div class="language-shell line-numbers-mode"><pre class="language-shell"><code><span class="token shebang important">#!/bin/bash</span>
+<span class="token assign-left variable">HIVE_LOG_DIR</span><span class="token operator">=</span><span class="token variable">$HIVE_HOME</span>/logs
+<span class="token keyword">if</span> <span class="token punctuation">[</span> <span class="token operator">!</span> -d <span class="token variable">$HIVE_LOG_DIR</span> <span class="token punctuation">]</span>
+<span class="token keyword">then</span>
+	<span class="token function">mkdir</span> -p <span class="token variable">$HIVE_LOG_DIR</span>
+<span class="token keyword">fi</span>
+<span class="token comment">#检查进程是否运行正常，参数1为进程名，参数2为进程端口</span>
+<span class="token keyword">function</span> <span class="token function-name function">check_process</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+    <span class="token assign-left variable">pid</span><span class="token operator">=</span><span class="token variable"><span class="token variable">$(</span><span class="token function">ps</span> -ef <span class="token operator"><span class="token file-descriptor important">2</span>&gt;</span>/dev/null <span class="token operator">|</span> <span class="token function">grep</span> -v <span class="token function">grep</span> <span class="token operator">|</span> <span class="token function">grep</span> -i $1 <span class="token operator">|</span> <span class="token function">awk</span> <span class="token string">'{print $2}'</span><span class="token variable">)</span></span>
+    <span class="token assign-left variable">ppid</span><span class="token operator">=</span><span class="token variable"><span class="token variable">$(</span><span class="token function">netstat</span> -nltp <span class="token operator"><span class="token file-descriptor important">2</span>&gt;</span>/dev/null <span class="token operator">|</span> <span class="token function">grep</span> $2 <span class="token operator">|</span> <span class="token function">awk</span> <span class="token string">'{print $7}'</span> <span class="token operator">|</span> <span class="token function">cut</span> -d <span class="token string">'/'</span> -f <span class="token number">1</span><span class="token variable">)</span></span>
+    <span class="token builtin class-name">echo</span> <span class="token variable">$pid</span>
+    <span class="token punctuation">[</span><span class="token punctuation">[</span> <span class="token string">&quot;<span class="token variable">$pid</span>&quot;</span> <span class="token operator">=~</span> <span class="token string">&quot;<span class="token variable">$ppid</span>&quot;</span> <span class="token punctuation">]</span><span class="token punctuation">]</span> <span class="token operator">&amp;&amp;</span> <span class="token punctuation">[</span> <span class="token string">&quot;<span class="token variable">$ppid</span>&quot;</span> <span class="token punctuation">]</span> <span class="token operator">&amp;&amp;</span> <span class="token builtin class-name">return</span> <span class="token number">0</span> <span class="token operator">||</span> <span class="token builtin class-name">return</span> <span class="token number">1</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">function</span> <span class="token function-name function">hive_start</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+    <span class="token assign-left variable">metapid</span><span class="token operator">=</span><span class="token variable"><span class="token variable">$(</span>check_process HiveMetastore <span class="token number">9083</span><span class="token variable">)</span></span>
+    <span class="token assign-left variable">cmd</span><span class="token operator">=</span><span class="token string">&quot;nohup hive --service metastore &gt;<span class="token variable">$HIVE_LOG_DIR</span>/metastore.log 2&gt;&amp;1 &amp;&quot;</span>
+    <span class="token assign-left variable">cmd</span><span class="token operator">=</span><span class="token variable">$cmd</span><span class="token string">&quot; sleep 30; hdfs dfsadmin -safemode wait &gt;/dev/null 2&gt;&amp;1&quot;</span>
+    <span class="token punctuation">[</span> -z <span class="token string">&quot;<span class="token variable">$metapid</span>&quot;</span> <span class="token punctuation">]</span> <span class="token operator">&amp;&amp;</span> <span class="token builtin class-name">eval</span> <span class="token variable">$cmd</span> <span class="token operator">||</span> <span class="token builtin class-name">echo</span> <span class="token string">&quot;Metastroe服务已启动&quot;</span>
+    <span class="token assign-left variable">server2pid</span><span class="token operator">=</span><span class="token variable"><span class="token variable">$(</span>check_process HiveServer2 <span class="token number">10000</span><span class="token variable">)</span></span>
+    <span class="token assign-left variable">cmd</span><span class="token operator">=</span><span class="token string">&quot;nohup hive --service hiveserver2 &gt;<span class="token variable">$HIVE_LOG_DIR</span>/hiveServer2.log 2&gt;&amp;1 &amp;&quot;</span>
+    <span class="token punctuation">[</span> -z <span class="token string">&quot;<span class="token variable">$server2pid</span>&quot;</span> <span class="token punctuation">]</span> <span class="token operator">&amp;&amp;</span> <span class="token builtin class-name">eval</span> <span class="token variable">$cmd</span> <span class="token operator">||</span> <span class="token builtin class-name">echo</span> <span class="token string">&quot;HiveServer2服务已启动&quot;</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">function</span> <span class="token function-name function">hive_stop</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+    <span class="token assign-left variable">metapid</span><span class="token operator">=</span><span class="token variable"><span class="token variable">$(</span>check_process HiveMetastore <span class="token number">9083</span><span class="token variable">)</span></span>
+    <span class="token punctuation">[</span> <span class="token string">&quot;<span class="token variable">$metapid</span>&quot;</span> <span class="token punctuation">]</span> <span class="token operator">&amp;&amp;</span> <span class="token function">kill</span> <span class="token variable">$metapid</span> <span class="token operator">||</span> <span class="token builtin class-name">echo</span> <span class="token string">&quot;Metastore服务未启动&quot;</span>
+    <span class="token assign-left variable">server2pid</span><span class="token operator">=</span><span class="token variable"><span class="token variable">$(</span>check_process HiveServer2 <span class="token number">10000</span><span class="token variable">)</span></span>
+    <span class="token punctuation">[</span> <span class="token string">&quot;<span class="token variable">$server2pid</span>&quot;</span> <span class="token punctuation">]</span> <span class="token operator">&amp;&amp;</span> <span class="token function">kill</span> <span class="token variable">$server2pid</span> <span class="token operator">||</span> <span class="token builtin class-name">echo</span> <span class="token string">&quot;HiveServer2服务未启动&quot;</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">case</span> <span class="token variable">$1</span> <span class="token keyword">in</span>
+<span class="token string">&quot;start&quot;</span><span class="token punctuation">)</span>
+    hive_start
+    <span class="token punctuation">;</span><span class="token punctuation">;</span>
+<span class="token string">&quot;stop&quot;</span><span class="token punctuation">)</span>
+    hive_stop
+    <span class="token punctuation">;</span><span class="token punctuation">;</span>
+<span class="token string">&quot;restart&quot;</span><span class="token punctuation">)</span>
+    hive_stop
+    <span class="token function">sleep</span> <span class="token number">2</span>
+    hive_start
+    <span class="token punctuation">;</span><span class="token punctuation">;</span>
+<span class="token string">&quot;status&quot;</span><span class="token punctuation">)</span>
+    check_process HiveMetastore <span class="token number">9083</span> <span class="token operator">&gt;</span>/dev/null <span class="token operator">&amp;&amp;</span> <span class="token builtin class-name">echo</span> <span class="token string">&quot;Metastore服务运行正常&quot;</span> <span class="token operator">||</span> <span class="token builtin class-name">echo</span> <span class="token string">&quot;Metastore服务运行异常&quot;</span>
+    check_process HiveServer2 <span class="token number">10000</span> <span class="token operator">&gt;</span>/dev/null <span class="token operator">&amp;&amp;</span> <span class="token builtin class-name">echo</span> <span class="token string">&quot;HiveServer2服务运行正常&quot;</span> <span class="token operator">||</span> <span class="token builtin class-name">echo</span> <span class="token string">&quot;HiveServer2服务运行异常&quot;</span>
+    <span class="token punctuation">;</span><span class="token punctuation">;</span>
+*<span class="token punctuation">)</span>
+    <span class="token builtin class-name">echo</span> Invalid Args<span class="token operator">!</span>
+    <span class="token builtin class-name">echo</span> <span class="token string">'Usage: '</span><span class="token variable"><span class="token variable">$(</span><span class="token function">basename</span> $0<span class="token variable">)</span></span><span class="token string">' start|stop|restart|status'</span>
+    <span class="token punctuation">;</span><span class="token punctuation">;</span>
+<span class="token keyword">esac</span>
+
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br><span class="line-number">31</span><br><span class="line-number">32</span><br><span class="line-number">33</span><br><span class="line-number">34</span><br><span class="line-number">35</span><br><span class="line-number">36</span><br><span class="line-number">37</span><br><span class="line-number">38</span><br><span class="line-number">39</span><br><span class="line-number">40</span><br><span class="line-number">41</span><br><span class="line-number">42</span><br><span class="line-number">43</span><br><span class="line-number">44</span><br><span class="line-number">45</span><br><span class="line-number">46</span><br><span class="line-number">47</span><br><span class="line-number">48</span><br><span class="line-number">49</span><br><span class="line-number">50</span><br><span class="line-number">51</span><br><span class="line-number">52</span><br><span class="line-number">53</span><br><span class="line-number">54</span><br><span class="line-number">55</span><br><span class="line-number">56</span><br></div></div><p>到此远程模式以及安装完了</p> <p><strong>Mysql卸载</strong>：</p> <details class="custom-block details"><summary>点击查看</summary> <div class="language-xml line-numbers-mode"><pre class="language-xml"><code>#关闭mysql服务
+systemctl stop mysqld.service
+
+#查找安装mysql的rpm包
+[root@node3 ~]# rpm -qa | grep -i mysql      
+mysql-community-libs-5.7.29-1.el7.x86_64
+mysql-community-common-5.7.29-1.el7.x86_64
+mysql-community-client-5.7.29-1.el7.x86_64
+mysql-community-server-5.7.29-1.el7.x86_64
+
+#卸载
+[root@node3 ~]# yum remove -y mysql-community-libs-5.7.29-1.el7.x86_64 mysql-community-common-5.7.29-1.el7.x86_64 mysql-community-client-5.7.29-1.el7.x86_64 mysql-community-server-5.7.29-1.el7.x86_64
+
+#查看是否卸载干净
+rpm -qa | grep -i mysql
+
+#查找mysql相关目录 删除
+[root@node1 ~]# find / -name mysql
+/var/lib/mysql
+/var/lib/mysql/mysql
+/usr/share/mysql
+
+[root@node1 ~]# rm -rf /var/lib/mysql
+[root@node1 ~]# rm -rf /var/lib/mysql/mysql
+[root@node1 ~]# rm -rf /usr/share/mysql
+
+#删除默认配置 日志
+rm -rf /etc/my.cnf 
+rm -rf /var/log/mysqld.log
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br></div></div></details> <p><strong>Mysql手动安装</strong></p> <details class="custom-block details"><summary>点击查看</summary> <div class="language-xml line-numbers-mode"><pre class="language-xml"><code>#卸载Centos7自带mariadb
+rpm -qa|grep mariadb
+mariadb-libs-5.5.64-1.el7.x86_64
+rpm -e mariadb-libs-5.5.64-1.el7.x86_64 --nodeps
+
+#创建mysql安装包存放点
+mkdir /export/software/mysql
+#上传mysql-5.7.29安装包到上述文件夹下、解压
+tar xvf mysql-5.7.29-1.el7.x86_64.rpm-bundle.tar
+
+#执行安装
+yum -y install libaio
+rpm -ivh mysql-community-common-5.7.29-1.el7.x86_64.rpm mysql-community-libs-5.7.29-1.el7.x86_64.rpm mysql-community-client-5.7.29-1.el7.x86_64.rpm mysql-community-server-5.7.29-1.el7.x86_64.rpm
+
+#初始化mysql
+mysqld --initialize
+#更改所属组
+chown mysql:mysql /var/lib/mysql -R
+
+#启动mysql
+systemctl start mysqld.service
+#查看生成的临时root密码
+cat  /var/log/mysqld.log
+#这行日志的最后就是随机生成的临时密码
+[Note] A temporary password is generated for root@localhost: o+TU+KDOm004
+
+#修改mysql root密码、授权远程访问
+mysql -u root -p
+Enter password:     #这里输入在日志中生成的临时密码
+
+#更新root密码  设置为hadoop
+mysql&gt; alter user user() identified by &quot;hadoop&quot;;
+Query OK, 0 rows affected (0.00 sec)
+#授权
+mysql&gt; use mysql;
+mysql&gt; GRANT ALL PRIVILEGES ON *.* TO 'root'@'%' IDENTIFIED BY 'hadoop' WITH GRANT OPTION;
+mysql&gt; FLUSH PRIVILEGES;
+
+#mysql的启动和关闭 状态查看
+systemctl stop mysqld
+systemctl status mysqld
+systemctl start mysqld
+
+#建议设置为开机自启动服务
+systemctl enable  mysqld
+
+#查看是否已经设置自启动成功
+systemctl list-unit-files | grep mysqld
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br><span class="line-number">31</span><br><span class="line-number">32</span><br><span class="line-number">33</span><br><span class="line-number">34</span><br><span class="line-number">35</span><br><span class="line-number">36</span><br><span class="line-number">37</span><br><span class="line-number">38</span><br><span class="line-number">39</span><br><span class="line-number">40</span><br><span class="line-number">41</span><br><span class="line-number">42</span><br><span class="line-number">43</span><br><span class="line-number">44</span><br><span class="line-number">45</span><br><span class="line-number">46</span><br><span class="line-number">47</span><br><span class="line-number">48</span><br></div></div></details> <p><strong>内嵌模式</strong>：</p> <details class="custom-block details"><summary>点击查看</summary> <div class="language-xml line-numbers-mode"><pre class="language-xml"><code># 上传解压安装包
+cd /export/server/
+tar zxvf apache-hive-3.1.2-bin.tar.gz
+mv apache-hive-3.1.2-bin hive
+
+#解决hadoop、hive之间guava版本差异
+cd /export/server/hive
+rm -rf lib/guava-19.0.jar
+cp /export/server/hadoop-3.1.4/share/hadoop/common/lib/guava-27.0-jre.jar ./lib/
+
+#修改hive环境变量文件 添加Hadoop_HOME
+cd /export/server/hive/conf/
+mv hive-env.sh.template hive-env.sh
+vim hive-env.sh
+export HADOOP_HOME=/export/server/hadoop-3.1.4
+export HIVE_CONF_DIR=/export/server/hive/conf
+export HIVE_AUX_JARS_PATH=/export/server/hive/lib
+
+#初始化metadata
+cd /export/server/hive
+bin/schematool -dbType derby -initSchema
+
+#启动hive服务
+bin/hive
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br></div></div></details> <p><strong>本地模式</strong>：</p> <details class="custom-block details"><summary>点击查看</summary> <div class="language-xml line-numbers-mode"><pre class="language-xml"><code>#-------------Mysql安装----------------------
+
+#卸载Centos7自带mariadb
+rpm -qa|grep mariadb
+mariadb-libs-5.5.64-1.el7.x86_64
+rpm -e mariadb-libs-5.5.64-1.el7.x86_64 --nodeps
+
+#创建mysql安装包存放点
+mkdir /export/software/mysql
+#上传mysql-5.7.29安装包到上述文件夹下、解压
+tar xvf mysql-5.7.29-1.el7.x86_64.rpm-bundle.tar
+
+#执行安装
+yum -y install libaio
+rpm -ivh mysql-community-common-5.7.29-1.el7.x86_64.rpm mysql-community-libs-5.7.29-1.el7.x86_64.rpm mysql-community-client-5.7.29-1.el7.x86_64.rpm mysql-community-server-5.7.29-1.el7.x86_64.rpm
+
+#初始化mysql
+mysqld --initialize
+#更改所属组
+chown mysql:mysql /var/lib/mysql -R
+
+#启动mysql
+systemctl start mysqld.service
+#查看生成的临时root密码
+cat  /var/log/mysqld.log
+#这行日志的最后就是随机生成的临时密码
+[Note] A temporary password is generated for root@localhost: o+TU+KDOm004
+
+#修改mysql root密码、授权远程访问
+mysql -u root -p
+Enter password:     #这里输入在日志中生成的临时密码
+
+#更新root密码  设置为hadoop
+mysql&gt; alter user user() identified by &quot;hadoop&quot;;
+Query OK, 0 rows affected (0.00 sec)
+#授权
+mysql&gt; use mysql;
+mysql&gt; GRANT ALL PRIVILEGES ON *.* TO 'root'@'%' IDENTIFIED BY 'hadoop' WITH GRANT OPTION;
+mysql&gt; FLUSH PRIVILEGES;
+
+#mysql的启动和关闭 状态查看
+systemctl stop mysqld
+systemctl status mysqld
+systemctl start mysqld
+
+#建议设置为开机自启动服务
+systemctl enable  mysqld
+
+#查看是否已经设置自启动成功
+systemctl list-unit-files | grep mysqld
+
+
+#--------------------Hive安装配置----------------------
+# 上传解压安装包
+cd /export/server/
+tar zxvf apache-hive-3.1.2-bin.tar.gz
+mv apache-hive-3.1.2-bin hive
+
+#解决hadoop、hive之间guava版本差异
+cd /export/server/hive
+rm -rf lib/guava-19.0.jar
+cp /export/server/hadoop-3.1.4/share/hadoop/common/lib/guava-27.0-jre.jar ./lib/
+
+#添加mysql jdbc驱动到hive安装包lib/文件下
+mysql-connector-java-5.1.32.jar
+
+#修改hive环境变量文件 添加Hadoop_HOME
+cd /export/server/hive/conf/
+mv hive-env.sh.template hive-env.sh
+vim hive-env.sh
+export HADOOP_HOME=/export/server/hadoop-3.1.4
+export HIVE_CONF_DIR=/export/server/hive/conf
+export HIVE_AUX_JARS_PATH=/export/server/hive/lib
+
+#新增hive-site.xml 配置mysql等相关信息
+vim hive-site.xml
+
+
+#初始化metadata
+cd /export/server/hive
+bin/schematool -initSchema -dbType mysql -verbos
+#初始化成功会在mysql中创建74张表
+
+#启动hive服务
+bin/hive
+
+#-----------------Hive-site.xml---------------------
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>configuration</span><span class="token punctuation">&gt;</span></span>
+    <span class="token comment">&lt;!-- 存储元数据mysql相关配置 --&gt;</span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>property</span><span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>name</span><span class="token punctuation">&gt;</span></span>javax.jdo.option.ConnectionURL<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>name</span><span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>value</span><span class="token punctuation">&gt;</span></span> jdbc:mysql://node1:3306/hive?createDatabaseIfNotExist=true<span class="token entity named-entity" title="&amp;">&amp;amp;</span>useSSL=false<span class="token entity named-entity" title="&amp;">&amp;amp;</span>useUnicode=true<span class="token entity named-entity" title="&amp;">&amp;amp;</span>characterEncoding=UTF-8<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>value</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>property</span><span class="token punctuation">&gt;</span></span>
+
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>property</span><span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>name</span><span class="token punctuation">&gt;</span></span>javax.jdo.option.ConnectionDriverName<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>name</span><span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>value</span><span class="token punctuation">&gt;</span></span>com.mysql.jdbc.Driver<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>value</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>property</span><span class="token punctuation">&gt;</span></span>
+
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>property</span><span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>name</span><span class="token punctuation">&gt;</span></span>javax.jdo.option.ConnectionUserName<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>name</span><span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>value</span><span class="token punctuation">&gt;</span></span>root<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>value</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>property</span><span class="token punctuation">&gt;</span></span>
+
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>property</span><span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>name</span><span class="token punctuation">&gt;</span></span>javax.jdo.option.ConnectionPassword<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>name</span><span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>value</span><span class="token punctuation">&gt;</span></span>hadoop<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>value</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>property</span><span class="token punctuation">&gt;</span></span>
+
+    <span class="token comment">&lt;!-- 关闭元数据存储授权  --&gt;</span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>property</span><span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>name</span><span class="token punctuation">&gt;</span></span>hive.metastore.event.db.notification.api.auth<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>name</span><span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>value</span><span class="token punctuation">&gt;</span></span>false<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>value</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>property</span><span class="token punctuation">&gt;</span></span>
+
+    <span class="token comment">&lt;!-- 关闭元数据存储版本的验证 --&gt;</span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>property</span><span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>name</span><span class="token punctuation">&gt;</span></span>hive.metastore.schema.verification<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>name</span><span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>value</span><span class="token punctuation">&gt;</span></span>false<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>value</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>property</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>configuration</span><span class="token punctuation">&gt;</span></span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br><span class="line-number">31</span><br><span class="line-number">32</span><br><span class="line-number">33</span><br><span class="line-number">34</span><br><span class="line-number">35</span><br><span class="line-number">36</span><br><span class="line-number">37</span><br><span class="line-number">38</span><br><span class="line-number">39</span><br><span class="line-number">40</span><br><span class="line-number">41</span><br><span class="line-number">42</span><br><span class="line-number">43</span><br><span class="line-number">44</span><br><span class="line-number">45</span><br><span class="line-number">46</span><br><span class="line-number">47</span><br><span class="line-number">48</span><br><span class="line-number">49</span><br><span class="line-number">50</span><br><span class="line-number">51</span><br><span class="line-number">52</span><br><span class="line-number">53</span><br><span class="line-number">54</span><br><span class="line-number">55</span><br><span class="line-number">56</span><br><span class="line-number">57</span><br><span class="line-number">58</span><br><span class="line-number">59</span><br><span class="line-number">60</span><br><span class="line-number">61</span><br><span class="line-number">62</span><br><span class="line-number">63</span><br><span class="line-number">64</span><br><span class="line-number">65</span><br><span class="line-number">66</span><br><span class="line-number">67</span><br><span class="line-number">68</span><br><span class="line-number">69</span><br><span class="line-number">70</span><br><span class="line-number">71</span><br><span class="line-number">72</span><br><span class="line-number">73</span><br><span class="line-number">74</span><br><span class="line-number">75</span><br><span class="line-number">76</span><br><span class="line-number">77</span><br><span class="line-number">78</span><br><span class="line-number">79</span><br><span class="line-number">80</span><br><span class="line-number">81</span><br><span class="line-number">82</span><br><span class="line-number">83</span><br><span class="line-number">84</span><br><span class="line-number">85</span><br><span class="line-number">86</span><br><span class="line-number">87</span><br><span class="line-number">88</span><br><span class="line-number">89</span><br><span class="line-number">90</span><br><span class="line-number">91</span><br><span class="line-number">92</span><br><span class="line-number">93</span><br><span class="line-number">94</span><br><span class="line-number">95</span><br><span class="line-number">96</span><br><span class="line-number">97</span><br><span class="line-number">98</span><br><span class="line-number">99</span><br><span class="line-number">100</span><br><span class="line-number">101</span><br><span class="line-number">102</span><br><span class="line-number">103</span><br><span class="line-number">104</span><br><span class="line-number">105</span><br><span class="line-number">106</span><br><span class="line-number">107</span><br><span class="line-number">108</span><br><span class="line-number">109</span><br><span class="line-number">110</span><br><span class="line-number">111</span><br><span class="line-number">112</span><br><span class="line-number">113</span><br><span class="line-number">114</span><br><span class="line-number">115</span><br><span class="line-number">116</span><br><span class="line-number">117</span><br><span class="line-number">118</span><br><span class="line-number">119</span><br><span class="line-number">120</span><br><span class="line-number">121</span><br></div></div></details> <h2 id="客户端使用"><a href="#客户端使用" class="header-anchor">#</a> <strong>客户端使用</strong></h2> <p><strong>远程模式</strong></p> <p><img src="https://gitee.com/axcmsm/tmp/raw/master/bigdata/20210911171359.png" alt=""></p> <p>所以启动时要开启俩个服务一个是metastore服务 一个是hiveserver2服务</p> <p><strong>启动</strong></p> <div class="language-shell line-numbers-mode"><pre class="language-shell"><code><span class="token comment">#先启动metastore服务 然后启动hiveserver2服务</span>
+<span class="token function">nohup</span> /opt/module/hive/bin/hive --service metastore <span class="token operator">&amp;</span>
+<span class="token function">nohup</span> /opt/module/hive/bin/hive --service hiveserver2 <span class="token operator">&amp;</span>
+<span class="token comment"># 如果你编写了上面的脚本可直接使用</span>
+hiveservices.sh start
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br></div></div><p><strong>hive是第一代客户端</strong>：（如果在其他机器访问需要添加配置）</p> <p>功能：用于以交互或批处理模式运行Hive查询；二是用于Hive相关服务的启动，比如metastore服务</p> <p><strong>/bin/beeline是第二代客户端</strong>：是一个JDBC客户端，（官方推荐）</p> <div class="language-shell line-numbers-mode"><pre class="language-shell"><code><span class="token comment">#                                部署hive主机ip</span>
+beeline<span class="token operator">&gt;</span> <span class="token operator">!</span> connect jdbc:hive2://hadoop111:10000
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br></div></div><p><strong>可使用：<code>jps -ml</code> 查看详情进程 判断出启动runjar是那个进程</strong></p> <div class="custom-block tip"><p class="custom-block-title">提示</p> <p>可以使用idea远程连接到我们hive进行基本操作</p> <p><strong>步骤</strong></p> <ul><li><p>配置hive驱动</p></li> <li><p>配置Hive数据源，连接HS2</p> <blockquote><p><strong>编写访问用户名和密码</strong> <strong>不是数据库的账号和密码</strong></p></blockquote></li> <li><p>编写sql文件 右键execute执行 （首次执行先建立session）</p></li></ul></div></div></div> <div class="page-slot page-slot-bottom"><!-- 横向自适应 -->
+      <ins class="adsbygoogle"
+          style="display:block"
+          data-ad-client="ca-pub-7828333725993554"
+          data-ad-slot="6620245489"
+          data-ad-format="auto"
+          data-full-width-responsive="true"></ins>
+      <script>
+          (adsbygoogle = window.adsbygoogle || []).push({});
+      </script></div> <div class="page-edit"><!----> <div class="tags"><a href="/tags/?tag=hive" title="标签">#hive</a></div> <!----></div> <div class="page-nav-wapper"><div class="page-nav-centre-wrap"><a href="/pages/zoa2s4fp5e13r1/" class="page-nav-centre page-nav-centre-prev"><div class="tooltip">zookeeper源码解析</div></a> <a href="/pages/hi25v15e1/" class="page-nav-centre page-nav-centre-next"><div class="tooltip">hive使用</div></a></div> <div class="page-nav"><p class="inner"><span class="prev">
+        ←
+        <a href="/pages/zoa2s4fp5e13r1/" class="prev">zookeeper源码解析</a></span> <span class="next"><a href="/pages/hi25v15e1/">hive使用</a>→
+      </span></p></div></div></div> <div class="article-list"><div class="article-title"><a href="/archives/" class="iconfont icon-bi">最近更新</a></div> <div class="article-wrapper"><dl><dd>01</dd> <dt><a href="/pages/97f14c/"><div>计划计划🐻‍❄️</div></a> <span>01-15</span></dt></dl><dl><dd>02</dd> <dt><a href="/pages/ace0b4/"><div>ClickHouse</div></a> <span>01-11</span></dt></dl><dl><dd>03</dd> <dt><a href="/pages/e0ae76/"><div>Maxwell</div></a> <span>01-11</span></dt></dl> <dl><dd></dd> <dt><a href="/archives/" class="more">更多文章&gt;</a></dt></dl></div></div></main></div> <div class="footer"><div class="icons"><a href="http://wpa.qq.com/msgrd?v=3&amp;uin=2461475139&amp;site=qq&amp;menu=yes" title="发邮件" target="_blank" class="iconfont icon-youjian"></a><a href="https://github.com/axcmsm" title="GitHub" target="_blank" class="iconfont icon-github"></a><a href="https://music.163.com/#/playlist?id=6757658477" title="听音乐" target="_blank" class="iconfont icon-erji"></a></div> 
+  Theme by
+  <a href="https://github.com/xugaoyi/vuepress-theme-vdoing" target="_blank" title="本站主题">Vdoing</a> 
+    | Copyright © 2021-2023
+    <span>axcmsm | 转载注明出处 </span></div> <div class="buttons"><div title="返回顶部" class="button blur go-to-top iconfont icon-fanhuidingbu" style="display:none;"></div> <div title="去评论" class="button blur go-to-comment iconfont icon-pinglun" style="display:none;"></div> <div title="主题模式" class="button blur theme-mode-but iconfont icon-zhuti"><ul class="select-box" style="display:none;"><li class="iconfont icon-zidong">
+          跟随系统
+        </li><li class="iconfont icon-rijianmoshi">
+          浅色模式
+        </li><li class="iconfont icon-yejianmoshi">
+          深色模式
+        </li><li class="iconfont icon-yuedu">
+          阅读模式
+        </li></ul></div></div> <div class="body-bg" style="background:url() center center / cover no-repeat;opacity:0.5;"></div> <!----> <div class="custom-html-window custom-html-window-rb" style="display:;"><div class="custom-wrapper"><i class="close-but">×</i> <div><!-- 固定160*160px -->
+      <ins class="adsbygoogle"
+          style="display:inline-block;max-width:160px;max-height:160px"
+          data-ad-client="ca-pub-7828333725993554"
+          data-ad-slot="8377369658"></ins>
+      <script>
+          (adsbygoogle = window.adsbygoogle || []).push({});
+      </script>
+      </div></div></div></div><div class="global-ui"><div></div></div></div>
+    <script src="/assets/js/app.54c20740.js" defer></script><script src="/assets/js/2.125ae6e8.js" defer></script><script src="/assets/js/26.a991ea92.js" defer></script>
+  </body>
+</html>
